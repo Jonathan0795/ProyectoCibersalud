@@ -19,8 +19,7 @@
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	
 }
 .body {
 	display: flex;
@@ -229,13 +228,11 @@
 	width: 60%;
 	background-color: #fff;
 	margin: auto;
-	max-width: 550px;
+	max-width: 600px;
 	max-height: 100%;
 	border-radius: 6px;
 	padding: 1rem 1.5rem;
 	/*place-items: center;*/
-	display: flex;
-	flex-direction: column;
 	transform: var(--transform);
 	transition: var(--transition);
 }
@@ -244,12 +241,42 @@
 	display: flex;
 	flex-direction: column;
 }
+.form__Exa-Com-container{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
 .form__Exa-Com-title{
 	width: 100%;
+	padding-bottom: 1rem;
+}
+.container-detail-1{
+	display: flex;
+	padding: 0 .8rem;
+	border: 1px solid #000;
+}
+.container-detail-2{
+	width: 100%;
+	padding: 0 .8rem;
+	border: 1px solid #000;
+}
+.container-exa{
+	width: 50%;
+}
+.container-detail{
+	width: 100%;
+}
+.col-input .custom-select{
+	font-size: 14px;
+}
+.col-input .form-control{
+	font-size: 14px;
 }
 .container-title{
-	display: flex;
-	width: 100%;
+	width: 90%;
+	margin: auto;
+	padding-bottom: .5rem;
 }
 .Exa-Com-title{
 	width: 90%;
@@ -259,10 +286,19 @@
 	margin: auto;
 	color: var(--color-laboratorio)
 }
+.row .col-form-label{
+	font-size: 14px;
+	font-weight: 700;
+}
+.col-input .form-control{
+	height: 1.8rem !important;
+}
 .title-exa{
 	position: relative;
+	font-weight: 600;
 	color: var(--color-laboratorio);
 	padding: 2.5px;
+	text-align: center;
 }
 .title-exa::after{
 	position: absolute;
@@ -273,21 +309,11 @@
 	background-color: var(--color-laboratorio);
 	top:calc(100% + .1rem);
 }
-.container-exa{
-	width: 100%;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
-}
 
-.container-detail{
-	width: 80%;
-}
-.container-detail-micro{
-	width: 100%;
-}
 /*****************MAIN_REGISTRO*****************************/
 .contenedor__laboratorio{
 	width: 40%;
+	margin: auto;
 	display: flex;
 	background-color: rgba(250,250,250,.8);	
 	box-shadow: 0 0 10px 2px #676767;
@@ -350,7 +376,10 @@
 	margin: auto;
 	padding-top: .5rem;
 }
-
+.form-group label{
+	font-size: 14px;
+	font-weight: 700;
+}
 
 .table .table-hover{
 	width: 100% ;
@@ -408,7 +437,7 @@
 	margin: auto;
 }
 .form-row label{
-	font-weight: 600;
+	font-weight: 700;
 }
 .table-hr{
 	text-align: center;
@@ -421,6 +450,10 @@
 	display: flex;
 	justify-content: center;
 }
+.tbody-uni{
+	font-size: 14px;
+}
 .tbody-exa{
-	font-weight: 600;
+	font-size: 14px;
+	font-weight: 700;
 }
