@@ -1,0 +1,426 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap')
+	;
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+}
+:root{
+	--color-laboratorio: #002244
+}
+/*AZUL NAVY #000080*/
+.main {
+	background-image:
+		url(https://odc.officeapps.live.com/odc/stat/images/hrd/Background-blurryGradient.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 90vh;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.body {
+	display: flex;
+	flex-direction: column;
+}
+/********HEADER********/
+.header {
+	width: 100%;
+	height: 10vh;
+	background: #020B30;
+	position: relative;
+	display: flex;
+	color: #fff;
+	justify-content: space-around;
+	padding: 0 1.5rem;
+}
+.hearder__titulo {
+	display: flex;
+	align-items: center;
+	width: 50%;	
+}
+
+.titulo__a {
+	color: #fff;
+	font-size: 3.2rem;
+}
+
+.titulo__a:hover {
+	color: rgb(195, 205, 245);
+	text-decoration: none;
+}
+.header__lista {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	font-size: 1.3rem;
+}
+.lista{
+	width: 100%;
+	display: flex;
+	margin: auto;
+	padding: 0;
+	align-items: center;
+	justify-content: flex-end;
+}
+.lista__item{
+	display: block;
+	padding: 0.5rem;
+}
+.item__link{
+	color:#fff;
+}
+
+.item__link-usuario{
+	cursor: inherit;
+}
+
+.item__link:hover{
+	text-decoration: none;
+	color:#fff;
+}
+.lista__show{
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	right: 0;
+	font-size: 1.1rem;
+	list-style: none;
+	padding: 1rem 1rem;
+	background-color: #020B30 ;
+}
+
+.lista__item-barra{
+	border-bottom: 1px solid #fff;
+}
+.fa-user-md{
+	font-size: 2rem
+}
+.item__link .fa-user-md:hover{
+	color:#fff;
+}
+.lista__item:hover .lista__show{
+	display: block;
+}
+
+.lista__show .lista__item:hover{
+	background-color: rgb(47, 82, 219, .2);
+}
+/*************MODAL*******************/
+.modal__cita,.modal__Exa-Com{
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #111111bd;
+	display: flex;
+	z-index: 1000;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s .3s;
+	--transform:translateY(100vh);
+	--transition: transform .5s;
+}
+.modal--show{
+	opacity: 1;
+	pointer-events: unset;
+	transition: opacity .3s;
+	background-color: rgb(0,0,0,.9);
+	--transform:translateY(0);
+	--transition: transform .4s .4s;
+}
+
+.modal__container{
+	width: 80%;
+	background-color: #fff;
+	margin: auto;
+	max-width: 800px;
+	max-height: 100%;
+	border-radius: 6px;
+	padding: 1rem 1.5rem;
+	/*place-items: center;*/
+	display: flex;
+	flex-direction: column;
+	transform: var(--transform);
+	transition: var(--transition);
+}
+
+.form__citas_final{
+	width: 100%;
+	margin: auto;
+}
+.alert-primary{
+	display: flex;
+	width: 40%;
+	float: right;
+	justify-content: center;
+	align-items: flex-end;
+	display: none;
+}
+.container__img{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: .8rem 0;
+}
+.img__logo-container{
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.titulo__img{
+	width: 70%;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal__img{
+	width: 65%;
+	max-width: 300px;
+	
+}
+.modal__title{
+	position: relative;
+	font-size: 1.6vw;
+	font-weight: 600;
+	margin: 0;
+	color: var(--color-laboratorio)
+}
+.modal__title::after{
+	position: absolute;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-laboratorio);
+	top:calc(100% + .1rem);
+}
+.container__datos{
+	width: 100%;
+}
+.display .compact{
+    width: 100%;
+	margin: auto;
+	font-size: .9rem;
+}
+.fa-hand-holding-medical{
+	font-size: 1.3vw;
+	color: var(--color-laboratorio)
+}
+.container__buttton{
+	display: flex;
+	justify-content: center;
+	padding-top: 1rem;
+}
+.container__buttton .btn{
+	width: 25%;
+	border-radius: 20px;
+	font-size: .9vw;
+	color: #fff !important;
+}
+/*************MODAL EXAMEN ORINA*******************/
+.modal__container-Exa-Com{
+	width: 60%;
+	background-color: #fff;
+	margin: auto;
+	max-width: 550px;
+	max-height: 100%;
+	border-radius: 6px;
+	padding: 1rem 1.5rem;
+	/*place-items: center;*/
+	display: flex;
+	flex-direction: column;
+	transform: var(--transform);
+	transition: var(--transition);
+}
+.form__Exa-Com{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.form__Exa-Com-title{
+	width: 100%;
+}
+.container-title{
+	display: flex;
+	width: 100%;
+}
+.Exa-Com-title{
+	width: 90%;
+	text-align: center;
+	font-size: 1.2vw;
+	font-weight: 600;
+	margin: auto;
+	color: var(--color-laboratorio)
+}
+.title-exa{
+	position: relative;
+	color: var(--color-laboratorio);
+	padding: 2.5px;
+}
+.title-exa::after{
+	position: absolute;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-laboratorio);
+	top:calc(100% + .1rem);
+}
+.container-exa{
+	width: 100%;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.container-detail{
+	width: 80%;
+}
+.container-detail-micro{
+	width: 100%;
+}
+/*****************MAIN_REGISTRO*****************************/
+.contenedor__laboratorio{
+	width: 40%;
+	display: flex;
+	background-color: rgba(250,250,250,.8);	
+	box-shadow: 0 0 10px 2px #676767;
+}
+
+.form__laboratorio{
+	width: 85%;
+	margin: auto;
+}
+.span{
+	color:#F40009;
+	font-weight: 500;
+	font-size: .6vw;
+}
+.titulos-examenes{
+	display: flex;
+}
+.contenedor__h4{
+	width: 90%;
+	color: var(--color-laboratorio);
+}
+.contenedor__buscar{
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+.titulos{
+	color: var(--color-laboratorio);
+	
+}
+.titulos__h4{
+	position: relative;
+	padding-top: 1rem;
+	font-weight: 600;
+}
+.titulos__h4::after{
+	position: absolute;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-laboratorio);
+	top:calc(100% + .2rem);
+}
+.btn-dark{
+	background-color: var(--color-laboratorio)!important;
+}
+.datoPer{
+	width: 100%;
+	border-bottom: 2px solid #000;
+}
+
+.datoPer,.cita{
+	padding-top: .5rem;
+}
+
+.cuerpo__datoPer{
+	width: 100%;
+	margin: auto;
+	padding-top: .5rem;
+}
+
+
+.table .table-hover{
+	width: 100% ;
+	margin: auto ;
+}
+.observacion__cuerpo{
+	width: 40%;
+}
+.fa-trash-alt{
+	color: var(--color-laboratorio);
+}
+.img__observacion{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	
+}
+.contenedor__botones{
+	width: 100%;
+	padding: 2rem 0;
+	background-color: rgba(250,250,250,.1);
+}
+.botones{
+	display: flex;
+	gap:.5rem;
+	justify-content: center;
+}
+.botones .btn{
+	width: 30%;
+	border-radius: 5px;
+}
+.contenedor__motivo{
+	padding-top: .5rem;
+	display: flex;
+}
+.motivo__datos{
+	width: 50%;
+}
+.motivo__img{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+.motivo__img img{
+	width: 100%;
+}
+/***************MAIN_PROCEDIMIENTOS***************/
+.input-resultado{
+	width: 40% !important;
+	height: 1.8rem !important;
+	margin: auto;
+}
+.form-row label{
+	font-weight: 600;
+}
+.table-hr{
+	text-align: center;
+}
+.fa-pen-to-square{
+	font-size: 1.3vw;
+	color: #6A5ACD;
+}
+.tbody-td{
+	display: flex;
+	justify-content: center;
+}
+.tbody-exa{
+	font-weight: 600;
+}

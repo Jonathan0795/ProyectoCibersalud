@@ -1,0 +1,175 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Lora', serif;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	height: 85vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#caja1__imagen {
+	width: 100%;
+	height: 85vh;
+}
+
+#label {
+	font-weight: 700;
+}
+
+.conte .h2 {
+	font-size: 3.5rem;
+	color: #fff;
+	font-weight: 700;
+}
+
+.conte h4 {
+	color: rgb(200, 0, 0);
+	font-size: 1.8rem;
+}
+.conte h3 {
+	margin-bottom: 1.5rem;
+}
+.main__caja2 {
+	width: 30%;
+	height: 85vh;
+	padding: 1%;
+	right: 1%;
+	position: absolute;
+	background-color: rgb(4, 14, 51, 0.4);
+	color: #fff;
+	align-content: center;
+	font-size: 1.1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.conte {
+	width: 100%;
+}
+
+.logo {
+	font-size: 4rem;
+	color: #fff;
+	display: block;
+}
+
+.form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.form-row{
+	width: 70%;
+}
+
+.form__icon{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+.fa-user{
+	font-size: 2rem;
+}
+
+.fa-lock{
+	font-size: 2rem;
+}
+
+.btn-danger {
+	width: 40%;
+	border-radius: 25px;
+}
+.alert-warning{
+	display: none;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+	padding: .2rem !important;
+	font-size: 1rem;
+}
+.form .form-control {
+	border-radius: 20px;
+}
+
+.footer {
+	width: 100%;
+	height: 15vh;
+	margin-top: auto;
+	background: rgb(4, 2, 33);
+	background: radial-gradient(circle, rgba(4, 2, 33, 1) 26%,
+		rgba(7, 7, 28, 1) 53%, rgba(8, 5, 19, 1) 70%);
+	display: flex;
+	align-items: center;
+}
+
+.footer__contenedor {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	color: #fff;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
+	padding-left: 6rem;
+	padding-right: 6rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.footer__redes .fab {
+	color: #fff;
+	font-size: 2rem;
+	letter-spacing: 10px;
+	transition: .4s;
+}
+
+.fa-facebook:hover {
+	color: #3b5998;
+	transform: translateY(-3px) scale(1.05);
+}
+
+.fa-twitter:hover {
+	color: #1DA1F2;
+	transform: translateY(-3px) scale(1.05);
+}
+
+.fa-youtube:hover {
+	transform: translateY(-3px) scale(1.05);
+	color: #bb0000;
+}
+
+.fa-instagram:hover {
+	color: #F473A6;
+	transform: translateY(-3px) scale(1.05);
+}
+
+.footer__contacto p {
+	margin: 0;
+	text-align: left;
+}
+
+.footer__copy p {
+	font-size: 1.2rem;
+	margin: 0;
+}

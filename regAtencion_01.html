@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Atención</title>
+    <link rel="icon" href="icon/c.ico">
+<link href="css/atencion.css" rel="stylesheet">
+<link href="css/fontawesome.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="hearder__titulo">
+			<a class="titulo__a" href="index.jsp">Cibersalud</a>
+		</div>
+		<div class="header__lista">
+			<ul class="lista">
+				<li class="lista__item"><a
+					class="item__link item__link-usuario" href="#">${pl.nombreP }
+						${pl.paterno } ${pl.materno }</a></li>
+				<li class="lista__item"><a class="item__link" href="#"><i
+						class="fas fa-user-md"></i></a>
+					<ul class="lista__show">
+						<li class="lista__item lista__item-barra"><a
+							class="item__link" href="profile.jsp">Perfil</a></li>
+						<li class="lista__item"><a class="item__link"
+							href="servPro?opcion=c">Cerrar Sesion</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</header>
+	<main class="main">
+		<div class="contenedor__citas">
+			<form class="form__citas" action="citserv" method="get"
+				title="Registro Atención">
+				<div class="titulos">
+					<h4 class="titulos__h4">
+						<i class="fas fa-user-alt"></i> Paciente
+					</h4>
+				</div>
+				<div class="datoPer">
+					<div class="cabecera__datoPer">
+						<div class="form-row">
+							<div class="form-group col-md-4">
+								<label>Documento <span class="span">(*)</span></label><input
+									type="text" value="${pa.dni}${dni}" class="form-control"
+									name="txtDni">
+							</div>
+							<div class="form-group col-md-2">
+								
+							</div>
+							<div class="form-group col-md-6">
+								<label>Nombres</label> <input type="text"
+									value="${pa.nomP }${nomP }" name="txtNombres"
+									class="form-control" readonly="readonly">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label>Apellido Paterno </label> <input type="text"
+									value="${pa.apeP }${apeP }" class="form-control"
+									name="txtApePa" readonly="readonly">
+							</div>
+							<div class="form-group col-md-6">
+								<label>Apellido Materno </label> <input type="text"
+									value="${pa.apeM }${apeM }" class="form-control"
+									name="txtApeMat" readonly="readonly">
+							</div>
+						</div>
+					</div>
+					<div class="titulos">
+						<h4 class="titulos__h4">
+							<i class="fa-solid fa-file-waveform"></i> Datos adicionales
+						</h4>
+					</div>
+					<div class="cuerpo__datoPer">
+						<div class="descripcion__cuerpo">
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label>Peso <span class="span">(kg)</span></label><input
+										type="number" class="form-control" name="txtPeso">
+								</div>
+								<div class="form-group col-md-4">
+									<label>Talla <span class="span">(cm)</span></label> <input
+										type="number" name="txtTalla" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>IMC</label> <input type="number" name="txtImc"
+										class="form-control" readonly="readonly">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Presión Arterial <span class="span">(mmHg)</span></label><input
+										type="text" class="form-control" name="txtPA">
+								</div>
+								<div class="form-group col-md-4">
+									<label>Saturación <span class="span">(SpO2)</span></label><input
+										type="number" class="form-control" name="txtSat">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-5">
+									<label>Temperatura <span class="span">(°C)</span></label> <input
+										type="number" name="txtTemp" class="form-control">
+								</div>
+								<div class="form-group col-md-5">
+									<label>Frec. Cardiaca <span class="span">(Ppm)</span></label> <input
+										type="number" name="txtFreCar" class="form-control">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Frec. Respiratoria <span class="span">(Rpm)</span></label><input
+										type="number" class="form-control" name="txtFrecRes">
+								</div>
+							</div>
+						</div>
+						<div class="observacion__cuerpo">
+							<div class="form-row">
+								<div class="form-group col-md-12">
+									<label for="exampleFormControlTextarea1">Observaciones:
+									</label>
+									<textarea class="form-control" name="txtArea" rows="6"></textarea>
+								</div>
+							</div>
+							<div class="form-row div__img">
+								<img class="img__observacion" alt=""
+									src="img/Doctor_Flatline.svg">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contenedor__botones">
+					<div class="botones">
+						<a href="citserv?opcion=ca" class="btn btn-danger" role="button"
+							aria-pressed="true"><i class="fas fa-times"></i> Cancelar</a>
+						<button type="submit" name="opcion" class="btn btn-warning"
+							value="bp">
+							<i class="fa-solid fa-heart-pulse"></i> Siguiente
+						</button>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+	integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</html>

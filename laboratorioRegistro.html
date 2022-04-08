@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Laboratorio</title>
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/laboratorio.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="hearder__titulo">
+            <a class="titulo__a" href="index.html">Cibersalud</a>
+        </div>
+        <div class="header__lista">
+            <ul class="lista">
+                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
+                        ${pl.paterno } ${pl.materno }</a></li>
+                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                    <ul class="lista__show">
+                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html">Perfil</a>
+                        </li>
+                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="modal__cita">
+        <div class="modal__container">
+            <form class="form__citas_final" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="alert alert-primary" role="alert">
+                    <strong><i class="fa-solid fa-flask"></i> Examen agregado</strong>
+                </div>
+                <div class="container__img">
+                    <div class="img__logo-container"> <img alt="" src="img/Laboratory Analyst_Monochromatic.svg"
+                            class="modal__img"></div>
+                    <div class="titulo__img">
+                        <h4 class="modal__title">EXAMENES DE LABORATORIO</h4>
+                    </div>
+                </div>
+                <div class="container__datos">
+                    <table id="myTable" class="display compact">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Descripcion</th>
+                                <th>Detalle</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${ListVenta }" var="p">
+                                <tr class="ListVenta">
+                                    <td>${p.getCodigo()}</td>
+                                    <td>${p.getDescripcion()}</td>
+                                    <td>${p.getDescPaque()}</td>
+                                    <td><a  title="Agregar" href="venServ?opcion=b&cod=${p.getCodigo()}">
+                                            <i class="fa-solid fa-hand-holding-medical"></i></a></td>
+
+                                </tr>
+                                <tr class="ListVenta">
+                                    <td>${p.getCodigo()}</td>
+                                    <td>${p.getDescripcion()}</td>
+                                    <td>${p.getDescPaque()}</td>
+                                    <td><a href="venServ?opcion=b&cod=${p.getCodigo()}">
+                                            <i class="fa-solid fa-hand-holding-medical"></i></a></td>
+
+                                </tr>
+                                <tr class="ListVenta">
+                                    <td>${p.getCodigo()}</td>
+                                    <td>${p.getDescripcion()}</td>
+                                    <td>${p.getDescPaque()}</td>
+                                    <td><a href="venServ?opcion=b&cod=${p.getCodigo()}">
+                                            <i class="fa-solid fa-hand-holding-medical"></i></a></td>
+
+                                </tr>
+
+                            </c:forEach>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container__buttton">
+                    <a class="btn btn-danger modal__close" role="button" aria-pressed="true" title="Cerrar">
+                        Cerrar</a>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+
+    <main class="main">
+        <div class="contenedor__laboratorio">
+            <form class="form__laboratorio" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="titulos">
+                    <h4 class="titulos__h4">
+                        <i class="fas fa-user-alt"></i> Paciente
+                    </h4>
+                </div>
+                <div class="datoPer">
+                    <div class="cabecera__datoPer">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Documento <span class="span">(*)</span></label><input type="text"
+                                    value="${pa.dni}${dni}" class="form-control" name="txtDni">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label>&nbsp</label> <a href="citserv?opcion=ca" class="btn btn-dark" role="button"
+                                    title="Buscar Paciente" aria-pressed="true"><i class="fas fa-search"></i> Buscar</a>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Nombres</label> <input type="text" value="${pa.nomP }${nomP }" name="txtNombres"
+                                    class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Apellido Paterno </label> <input type="text" value="${pa.apeP }${apeP }"
+                                    class="form-control" name="txtApePa" readonly="readonly">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Apellido Materno </label> <input type="text" value="${pa.apeM }${apeM }"
+                                    class="form-control" name="txtApeMat" readonly="readonly">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="titulos-examenes">
+                        <div class="contenedor__h4">
+                            <h4 class="titulos__h4">
+                                <i class="fa-solid fa-vial"></i> Exámenes Auxiliares
+                            </h4>
+                        </div>
+                        <div class="contenedor__buscar"><a href="#" class="btn btn-danger btn__exa" role="button"
+                                aria-pressed="true" title="Agregar Exámenes"><i class="fas fa-search"></i></a></div>
+                    </div>
+                    <div class="cuerpo__datoPer">
+
+                        <table id="myTable" class="table table-hover">
+                            <thead class="table table-hover">
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Descripcion</th>
+                                    <th>Detalle</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <r:forEach items="${carro }" var="d">
+                                    <tr>
+                                        <td>${d.codigo}</td>
+                                        <td>${d.descripcion}</td>
+                                        <td>${d.descPaque}</td>
+                                        <td><a href="venServ?opcion=e&cod=${d.codigo}"><i
+                                                    class="fas fa-trash-alt"></i></a></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>${d.codigo}</td>
+                                        <td>${d.descripcion}</td>
+                                        <td>${d.descPaque}</td>
+                                        <td><a href="venServ?opcion=e&cod=${d.codigo}"><i
+                                                    class="fas fa-trash-alt"></i></a></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>${d.codigo}</td>
+                                        <td>${d.descripcion}</td>
+                                        <td>${d.descPaque}</td>
+                                        <td><a href="venServ?opcion=e&cod=${d.codigo}"><i
+                                                    class="fas fa-trash-alt"></i></a></td>
+
+                                    </tr>
+                                </r:forEach>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="contenedor__botones">
+                    <div class="botones">
+                        <a href="index.html" class="btn btn-danger" role="button" aria-pressed="true">
+                            Cancelar</a>
+                        <button type="submit" name="opcion" class="btn btn-warning" value="bp" title="Guardar">
+                            <i class="fa-solid fa-flask"></i> Guardar
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+<script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document)
+        .ready(
+            function () {
+                $('#myTable')
+                    .DataTable(
+                        {
+                            "language": {
+                                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+                            }
+                        });
+            });
+
+</script>
+
+</html>

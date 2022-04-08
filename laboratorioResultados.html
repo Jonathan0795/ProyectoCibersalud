@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Resultados</title>
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/laboratorio.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</head>
+
+<body>
+
+    <section class="modal__Exa-Com">
+        <div class="modal__container-Exa-Com">
+            <form class="form__Exa-Com" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="form__Exa-Com-title">
+                    <h4 class="Exa-Com-title">EXAMEN COMPLETO DE ORINA</h4>
+                </div>
+                <div class="form__Exa-Com-container">
+                    <div class="container-exa">
+                        <div class="container-title">
+                            <h5 class="title-exa">Examen Físico</h5>
+                        </div>
+                        <div class="container-detail">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Color:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Aspecto:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">PH:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Densidad:</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container-title">
+                        <div class="container-title">
+                            <h5 class="title-exa">Examen Químico</h5>
+                        </div>
+                        <div class="container-detail"></div>
+                    </div>
+                    <div class="container-exa">
+                        <div class="container-title">
+                            <h5 class="title-exa">Examen Microscópico</h5>
+                        </div>
+                        <div class="container-detail-micro">
+                            <div class="mb-3 row">
+                                <label class="col-sm-6 col-form-label">Leucocitos Aislados:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 col-form-label">Campo</label>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-6 col-form-label">Leucocitos:
+                                    Aglutinados</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 col-form-label">Campo</label>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-6 col-form-label">Hematies:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 col-form-label">Campo</label>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-6 col-form-label">Celulas Epiteliales:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 col-form-label">Campo</label>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-6 col-form-label">Germenes:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-sm-2 col-form-label">Campo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__buttton">
+                    <a class="btn btn-danger modal__close" role="button" aria-pressed="true" title="Cerrar">
+                        Cerrar</a>
+                    <button type="submit" name="opcion" class="btn btn-success" value="bp" title="Guardar">
+                        <i class="fa-solid fa-flask"></i> Grabar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <header class="header">
+        <div class="hearder__titulo">
+            <a class="titulo__a" href="index.html">Cibersalud</a>
+        </div>
+        <div class="header__lista">
+            <ul class="lista">
+                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
+                        ${pl.paterno } ${pl.materno }</a></li>
+                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                    <ul class="lista__show">
+                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html">Perfil</a>
+                        </li>
+                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="contenedor__laboratorio">
+            <form class="form__laboratorio" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="titulos">
+                    <h4 class="titulos__h4">
+                        <i class="fas fa-user-alt"></i> Paciente
+                    </h4>
+                </div>
+                <div class="datoPer">
+                    <div class="cabecera__datoPer">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Documento</label><input type="text" value="${pa.dni}${dni}" class="form-control"
+                                    name="txtDni" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Correo Electronico</label> <input type="text" value="${pa.nomP }${nomP }"
+                                    name="txtNombres" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label>Edad</label> <input type="text" value="${pa.dni}${dni}" class="form-control"
+                                    name="txtDni" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Nombres y Apellidos </label> <input type="text" value="${pa.apeP }${apeP }"
+                                    class="form-control" name="txtApePa" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="titulos">
+                        <h4 class="titulos__h4">
+                            <i class="fa-solid fa-pen"></i> Registro Resultados
+                        </h4>
+                    </div>
+
+
+                    <div class="cuerpo__datoPer">
+                        <table id="tblResultados" class="table table-hover">
+                            <thead class="table table-hover">
+                                <tr class="table-hr">
+                                    <th>Examen</th>
+                                    <th>Resultado</th>
+                                    <th>Unidad</th>
+                                    <th>Opción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <r:forEach items="${carro }" var="d">
+                                    <tr>
+                                        <td class="tbody-exa">Examen Completo de Orina</td>
+                                        <td class="tbody-td">
+                                            <input type="text" value="" class="form-control input-resultado"
+                                                name="txtApeMat">
+                                        </td>
+                                        <td></td>
+
+                                        <td class="tbody-td"><a class="btn__exa" href="#"><i
+                                                    class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tbody-exa">Hemoglobina</td>
+                                        <td>
+                                            <input type="text" value="" class="form-control input-resultado"
+                                                name="txtApeMat">
+                                        </td>
+                                        <td>mg/mL</td>
+
+                                        <td class="tbody-td"><a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tbody-exa">Glucosa</td>
+                                        <td>
+                                            <input type="text" value="" class="form-control input-resultado"
+                                                name="txtApeMat">
+                                        </td>
+                                        <td>mg/mL</td>
+
+                                        <td class="tbody-td"><a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
+                                    </tr>
+
+                                </r:forEach>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="contenedor__botones">
+                    <div class="botones">
+                        <a href="index.html" class="btn btn-danger" role="button" aria-pressed="true">
+                            Cancelar</a>
+                        <button type="submit" name="opcion" class="btn btn-warning" value="bp" title="Guardar">
+                            <i class="fa-solid fa-flask"></i> Guardar
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+<script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</html>
