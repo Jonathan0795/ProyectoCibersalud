@@ -2,7 +2,7 @@ $(document).ready(function(){
 	const Men = $("#hdMensaje").val();
 		
 	if(Men!== "" &&  Men!== undefined){
-	    Swal.fire("ERROR",Men, "error");
+	    Swal.fire("",Men, "error");
  		$("#hdMensaje").val("");
 	}
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
 				$('#alertPass').css('display','none');
 				
 	  		if ((Usu === "" || Usu === undefined)&&(Pass === "" || Pass === undefined)) {
-	    		Swal.fire("ERROR", "Ingrese usuario y clave", "error");
+	    		Swal.fire("", "Ingrese usuario y clave", "warning");
 				//$('#alertUser').css('display','block');
 				//$('#alertPass').css('display','block');
 			}

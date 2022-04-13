@@ -1,13 +1,13 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap')
 	;
-
 * {
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
 }
 :root{
-	--color-laboratorio: #002244
+	--color-laboratorio: #002244;
+	--color-resultados: #444C38;
 }
 /*AZUL NAVY #000080*/
 .main {
@@ -18,8 +18,7 @@
 	min-height: 90vh;
 	display: flex;
 	width: 100%;
-	flex-direction: column;
-	
+	flex-direction: column;	
 }
 .body {
 	display: flex;
@@ -41,12 +40,10 @@
 	align-items: center;
 	width: 50%;	
 }
-
 .titulo__a {
 	color: #fff;
 	font-size: 3.2rem;
 }
-
 .titulo__a:hover {
 	color: rgb(195, 205, 245);
 	text-decoration: none;
@@ -72,11 +69,9 @@
 .item__link{
 	color:#fff;
 }
-
 .item__link-usuario{
 	cursor: inherit;
 }
-
 .item__link:hover{
 	text-decoration: none;
 	color:#fff;
@@ -91,7 +86,6 @@
 	padding: 1rem 1rem;
 	background-color: #020B30 ;
 }
-
 .lista__item-barra{
 	border-bottom: 1px solid #fff;
 }
@@ -104,7 +98,6 @@
 .lista__item:hover .lista__show{
 	display: block;
 }
-
 .lista__show .lista__item:hover{
 	background-color: rgb(47, 82, 219, .2);
 }
@@ -132,7 +125,6 @@
 	--transform:translateY(0);
 	--transition: transform .4s .4s;
 }
-
 .modal__container{
 	width: 80%;
 	background-color: #fff;
@@ -182,7 +174,6 @@
 .modal__img{
 	width: 65%;
 	max-width: 300px;
-	
 }
 .modal__title{
 	position: relative;
@@ -241,25 +232,34 @@
 	display: flex;
 	flex-direction: column;
 }
+.form__Exa-Com-title{
+	width: 100%;
+	padding-bottom: 1rem;
+}
+.Exa-Com-title{
+	width: 90%;
+	text-align: center;
+	font-size: 1.2vw;
+	font-weight: 700;
+	margin: auto;
+	color: #004526
+}
 .form__Exa-Com-container{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
-}
-.form__Exa-Com-title{
-	width: 100%;
-	padding-bottom: 1rem;
+	font-size: 14px;
 }
 .container-detail-1{
 	display: flex;
 	padding: 0 .8rem;
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 }
 .container-detail-2{
 	width: 100%;
 	padding: 0 .8rem;
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 }
 .container-exa{
 	width: 50%;
@@ -267,24 +267,10 @@
 .container-detail{
 	width: 100%;
 }
-.col-input .custom-select{
-	font-size: 14px;
-}
-.col-input .form-control{
-	font-size: 14px;
-}
 .container-title{
-	width: 90%;
+	width: 95%;
 	margin: auto;
 	padding-bottom: .5rem;
-}
-.Exa-Com-title{
-	width: 90%;
-	text-align: center;
-	font-size: 1.2vw;
-	font-weight: 600;
-	margin: auto;
-	color: var(--color-laboratorio)
 }
 .row .col-form-label{
 	font-size: 14px;
@@ -294,9 +280,10 @@
 	height: 1.8rem !important;
 }
 .title-exa{
+	font-size: 16px;
 	position: relative;
-	font-weight: 600;
-	color: var(--color-laboratorio);
+	font-weight: 700;
+	color: var(--color-resultados);
 	padding: 2.5px;
 	text-align: center;
 }
@@ -306,8 +293,22 @@
 	display: block;
 	width: 100%;
 	height: 2px;
-	background-color: var(--color-laboratorio);
+	background-color: var(--color-resultados);
 	top:calc(100% + .1rem);
+}
+.contenedor__botones-exa-com{
+	width: 100%;
+	gap: .5rem;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	padding: .2rem 0;
+}
+
+.contenedor__botones-exa-com .btn{
+	width: 35%;
+	border-radius: 5px;
+	font-size: 14px;
 }
 
 /*****************MAIN_REGISTRO*****************************/
@@ -318,7 +319,6 @@
 	background-color: rgba(250,250,250,.8);	
 	box-shadow: 0 0 10px 2px #676767;
 }
-
 .form__laboratorio{
 	width: 85%;
 	margin: auto;
@@ -349,6 +349,7 @@
 	position: relative;
 	padding-top: 1rem;
 	font-weight: 600;
+	font-size: 1.3vw;
 }
 .titulos__h4::after{
 	position: absolute;
@@ -366,11 +367,9 @@
 	width: 100%;
 	border-bottom: 2px solid #000;
 }
-
 .datoPer,.cita{
 	padding-top: .5rem;
 }
-
 .cuerpo__datoPer{
 	width: 100%;
 	margin: auto;
@@ -380,7 +379,6 @@
 	font-size: 14px;
 	font-weight: 700;
 }
-
 .table .table-hover{
 	width: 100% ;
 	margin: auto ;
@@ -397,7 +395,6 @@
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-	
 }
 .contenedor__botones{
 	width: 100%;
@@ -443,7 +440,7 @@
 	text-align: center;
 }
 .fa-pen-to-square{
-	font-size: 1.3vw;
+	font-size: 1.2vw;
 	color: #6A5ACD;
 }
 .tbody-td{
