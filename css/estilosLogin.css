@@ -25,6 +25,7 @@
 	height: 85vh;
 	background-repeat: no-repeat;
 	background-size: cover;
+	object-fit: cover;
 }
 
 .contenedor__formulario {
@@ -184,69 +185,93 @@
 	transform: translateY(-3px) scale(1.05);
 }
 
+/********************RESPONSIVE***************************/
 @media (max-width:450px) {
-	.contenedor__imagen {
-		width: 100%;	
-	}
+
 	.main {
-		height: 60vh;
+		height: 70vh;
 	}
+
 	.contenedor__formulario {
 		width: 100%;
 		height: 70%;
+		right: 0;
 		position: absolute;
 		background-color: rgb(4, 14, 51, 0.4);
 		color: #fff;
 		display: flex;
 	}
+
 	.titulos-h1 {
 		font-size: 2.5rem;
 		font-weight: 600;
 		margin: 0;
 	}
-	
+
 	.titulos-h2 {
 		color: #AA0000;
 		font-size: 1.7rem;
 	}
-	
+
 	.titulos-h3 {
 		font-size: 1.2rem;
 		padding: 1rem 0;
 	}
-	
+
 	.contenedor__form-input {
 		width: 100%;
 		display: flex;
 	}
-	
-	.form-row{
+
+	.form-row {
 		width: 100%;
 	}
-	.form-control{
-		width: 60% ;
+
+	.form-control {
+		width: 60%;
 	}
+
 	.form__icon {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.form__icon .fa-solid {
 		font-size: 2rem;
 	}
+
 	.footer {
 		width: 100%;
-		height: 40vh;
+		height: 30vh;
 		font-size: .8rem;
 		margin-top: auto;
-		
+
 	}
+
 	.footer__contenedor {
 		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 		color: #fff;
+	}
+
+	.footer__redes {
+		width: 100%;
+	}
+
+	.footer__contacto {
+		width: 100%;
+	}
+
+	.footer__copy {
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+
+	.footer__copy p {
+		padding: 0;
 	}
 }

@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Menu Cibersalud</title>
     <link rel="icon" href="icon/c.ico">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/styleMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body class="body">
     <header class="header">
         <div class="hearder__titulo">
-            <a class="titulo__a" href="inicio.html">Cibersalud</a>
+            <a class="titulo__a" href="index.html">Cibersalud</a>
         </div>
         <div class="header__lista">
             <ul class="lista">
@@ -41,9 +42,13 @@
                         <i class="fas fa-arrow-right list__arrow"></i>
                     </div>
                     <ul class="list__show">
+                        <li class="list__inside"><a href="registro_profesio.jsp"
+                                class="nav__link nav__link--inside">Estoy dentro </a></li>
                         <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
                         <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
+                        <li class="list__inside"><a href="laboratorioRegistro.html" class="nav__link nav__link--inside">Laboratorio </a></li>
+                        <li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="list__item">
@@ -69,6 +74,7 @@
                                 class="nav__link nav__link--inside">Registro Pacientes</a></li>
                         <li class="list__inside"><a href="pacienteConsulta.jsp"
                                 class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
+
                     </ul>
                 </li>
                 <li class="list__item">
@@ -77,9 +83,11 @@
                         <i class="fas fa-arrow-right list__arrow"></i>
                     </div>
                     <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="loginCita.jsp" class="nav__link nav__link--inside">Registro
+                        <li class="list__inside"><a href="citaLogin.jsp" class="nav__link nav__link--inside">Registro
                                 Citas</a></li>
                         <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a></li>
+                        <li class="list__inside"><a href="citserv?opcion=lb" class="nav__link nav__link--inside">Bandeja
+                                de entrada</a></li>
                     </ul>
                 </li>
                 <li class="list__item">
@@ -87,88 +95,28 @@
                         <i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
                     </div>
                 </li>
-
             </ul>
         </nav>
-        <div class="card__profile">
-            <form action="servPro" method="get" title="Actualizar Usuario" class="form__actualizar">
-                <div class="contenedor__card">
-                    <div class="card__header">
-                        <i class="header__title">${pl.nombreP} ${pl.paterno }
-                            ${pl.materno }</i>
-                        <button type="button" id="boton" onclick="divLogin()" class="btn btn-warning">Mostrar</button>
-                    </div>
-                    <div class="card__main">
-                        <div class="main__photo">
-                            <div class="photo__contenedor">
-                                <div class="photo__img">
-                                    <img alt="" src="img/pacientes/${pl.documento }.png">
-                                </div>
-                                <div class="photo__information">
-                                    <div class="information">
-                                        <i class="information__titulo">Personal</i> <i>${pl.tipoPersonal }</i>
-                                    </div>
-                                    <div class="information">
-                                        <i class="information__titulo">Colegiatura</i><i>${pl.colegiatura }</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main__information">
-                            <div class="information__general">
-                                <div class="information">
-                                    <i class="information__titulo">Documento</i> <input type="text"
-                                        value="${pl.documento }" name="txtDoc" readonly="readonly" class="form-control"
-                                        id="InputUsu">
-                                </div>
-                                <div class="information">
-                                    <i class="information__titulo">Fecha Nacimiento</i> <i
-                                        class="information__value">${pl.fecnac }</i>
-                                </div>
-                                <div class="information">
-                                    <i class="information__titulo">Sexo</i> <i class="information__value">${pl.tipoSexo
-                                        }</i>
-                                </div>
-                                <div class="information">
-                                    <i class="information__titulo">Contacto</i> <i
-                                        class="information__value">${pl.celular }</i>
-                                </div>
-                                <div class="information">
-                                    <i class="information__titulo">Turno</i> <i
-                                        class="information__value">${pl.tipoTurno }</i>
-                                </div>
-                            </div>
-                            <div id="caja" class="information__usuario">
-                                <div class="information">
-                                    <i class="information__titulo">Usuario</i> <input type="text" value="${pl.usuario }"
-                                        name="txtUsu" class="form-control" id="InputUsu" readonly="readonly">
-                                </div>
-                                <div class="information ">
-                                    <i class="information__titulo">Clave</i><input type="text" value="${pl.clave }"
-                                        name="txtCont" class="form-control" id="InputContr"
-                                        placeholder="Ingresa Contraseña">
+        <div class="das">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
 
-                                </div>
-                                <div class="information  information__button">
-                                    <button type="submit" name="opcion" class="btn btn-danger" value="au">
-                                        <i class="fas fa-user-edit"></i> Actualizar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">${ds.result }</p>
+                    <a href="#" class="card-link">Card link</a> <a href="#" class="card-link">Another link</a>
+
                 </div>
-                ${mensaje }
-            </form>
+            </div>
         </div>
     </main>
 </body>
-<script src="js/main.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 
 </html>

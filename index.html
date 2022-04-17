@@ -5,118 +5,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Cibersalud</title>
+    <title>Cibersalud® Login</title>
     <link rel="icon" href="icon/c.ico">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/styleMenu.css" rel="stylesheet">
+    <link href="css/estilosLogin.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 </head>
 
 <body class="body">
-    <header class="header">
-        <div class="hearder__titulo">
-            <a class="titulo__a" href="index.html">Cibersalud</a>
-        </div>
-        <div class="header__lista">
-            <ul class="lista">
-                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
-                        ${pl.paterno } ${pl.materno }</a></li>
-                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
-                    <ul class="lista__show">
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html">Perfil</a>
-                        </li>
-                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
     <main class="main">
-        <nav class="nav">
-            <ul class="list">
-                <li class="list__item list__item--click">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-hospital-alt"></i> <a href="#" class="nav__link">Servicios</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show">
-                        <li class="list__inside"><a href="registro_profesio.jsp"
-                                class="nav__link nav__link--inside">Estoy dentro </a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
-                        <li class="list__inside"><a href="laboratorioRegistro.html" class="nav__link nav__link--inside">Laboratorio </a></li>
-                        <li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-first-aid"></i> <a href="#" class="nav__link">Farmacia</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="reg_paciente.jsp"
-                                class="nav__link nav__link--inside">Catálogo</a></li>
-                        <li class="list__inside"><a href="consultaPaciente.jsp"
-                                class="nav__link nav__link--inside">Venta Medicamentos</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Consulta</a></li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-user-injured"></i> <a href="#" class="nav__link">Paciente</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="pacienteRegistro.jsp"
-                                class="nav__link nav__link--inside">Registro Pacientes</a></li>
-                        <li class="list__inside"><a href="pacienteConsulta.jsp"
-                                class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
-
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-hospital-user"></i> <a href="#" class="nav__link">Citas</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="citaLogin.jsp" class="nav__link nav__link--inside">Registro
-                                Citas</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a></li>
-                        <li class="list__inside"><a href="citserv?opcion=lb" class="nav__link nav__link--inside">Bandeja
-                                de entrada</a></li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button">
-                        <i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="das">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">${ds.result }</p>
-                    <a href="#" class="card-link">Card link</a> <a href="#" class="card-link">Another link</a>
-
+        <img class="contenedor__imagen" alt="" src="img/bacteria.jpg">
+        <div class="contenedor__formulario">
+            <form class="form__login" action="servPro" method="post" id="form">
+                <div class="cotenedor__titulos">
+                    <h1 class="titulos-h1">CIBERSALUD</h1>
+                    <h2 class="titulos-h2">Primero tu salud</h2>
+                    <h3 class="titulos-h3">Acceso al sistema</h3>
                 </div>
-            </div>
+                <div class="contenedor__form-input">
+                    <div class="form-row">
+                        <div class="form-group col-md-2 form__icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <input type="text" name="txtUsuario" class="form-control" id="InputEmail1"
+                                placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2 form__icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <input type="password" name="txtClave" class="form-control" id="InputPassword1"
+                                placeholder="Contraseña">
+                        </div>
+                    </div>
+
+                    <a class="btn btn-danger" name="opcion2" id="btnIngresarEf">
+                        Ingresar </a>
+                    <button type="submit" class="btn btn-danger" name="opcion" id="btnIngresar" style="display: none"
+                        value="lo">Ingresar</button>
+                </div>
+                <div class="contenedor__alertas">
+                    <div class="alert alert-warning" role="alert" id="alertUser">Ingrese
+                        su usuario</div>
+                    <div class="alert alert-warning" role="alert" id="alertPass">Ingrese
+                        su contraseña</div>
+                    <input type="hidden" name="hdMensaje" id="hdMensaje" value="${mensaje}"></input>
+                </div>
+            </form>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <div class="footer__redes">
+                <h5 class="container__redes-h5">SIGUENOS EN</h5>
+                <div class="container__iconos"><a href="https://www.facebook.com" target="_blank"><i
+                            class="fab fa-facebook"></i></a><a href="https://www.twitter.com" target="_blank"><i
+                            class="fab fa-twitter"></i></a> <a href="https://www.instagram.com" target="_blank"><i
+                            class="fab fa-instagram"></i></a> <a href="https://www.youtube.com" target="_blank"><i
+                            class="fab fa-youtube"></i></a></div>
+
+            </div>
+            <div class="footer__contacto">
+                <h5>CONTACTANOS</h5>
+                <p>
+                    <i class="fas fa-phone-alt"></i> 01558-5062
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i> cibersalud@gmail.com
+                </p>
+            </div>
+            <div class="footer__copy">
+                <p>&copy CIBERSALUD. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
 
 </html>
