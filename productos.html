@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/venta.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="body">
+    <section class="modal__carrito">
+        <div class="modal__container-carrito">
+            <form class="form__modal-carrito" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="modal__carrito-titulo"><a href="#" class="botton__ocultar"><i
+                            class="fa-solid fa-angle-right"></i></a><label class="label__titulo">Carrito</label></div>
+                <div class="modal__carrito-item">
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/ampolla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Ampolla</label>
+                            </div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/macarilla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Mascarilla
+                                    KN-95</label></div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/ampolla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Ampolla</label>
+                            </div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/ensure.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Ensure Advance</label>
+                            </div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    94.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/ampolla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Ampolla</label>
+                            </div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/macarilla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Mascarilla
+                                    KN-95</label></div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__carrito-footer">
+                    <div class="footer__subtotal-card"><label class="label__subtotal-title">Subtotal</label><label
+                            class="label__subtotal-car">S/. 150.00</label></div>
+                    <div class="footer__button-modal"><a href="#" title="" class="button__carrito-modal">Ver carrito</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="container__prueba">
+        <nav class="info__header" id="info__nav">
+            <a href="" class="a__header">Nuestras Boticas</a>
+            <a href="" class="a__header">Teléfono (01) 558-5062</a>
+        </nav>
+        <header class="header">
+            <div class="nav__header">
+                <!-- <div class="header__lista"> -->
+
+
+                <div class="hearder__titulo">
+                    <a class="titulo__a" href="inicio.html">Cibersalud</a>
+                </div>
+
+                <div class="header__busqueda">
+                    <input type="text" class="input__busqueda" placeholder="Busca un producto"><a href="#"
+                        class="button__busqueda"><i class="fas fa-search"></i></a>
+                </div>
+                <ul class="header__lista">
+                    <li class="lista__item ">
+                        <div class="contador__carrito">
+                            <a href="carrito.html" class="fas fa-shopping-cart"></a><span
+                                class="span__shopping">1</span>
+                        </div>
+                    </li>
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#">Aguinaga Juarez
+                            Jonathan
+                            Cesar</a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                        <ul class="lista__show">
+                            <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"> <i
+                                        class="fa-solid fa-user"></i> Perfil</a>
+                            </li>
+                            <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"><i
+                                        class="fa-solid fa-box-open"></i> Pedidos</a>
+                            </li>
+                            <li class="lista__item"><a class="item__link item__link-close " href="servPro?opcion=c"> <i
+                                        class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- </div> -->
+            </div>
+        </header>
+        <main class="main">
+            <div class="contenedor__productos">
+                <div class="container__card">
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/retaron.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Paracetamol</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 25.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/jabon.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Jabon</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 8.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/pastilla.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Pastillas</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 10.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/ampolla.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Ampolla</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 18.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/pastaDental.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Crema dental Family Doctor</label>
+                        </div>
+                        <div class="producto__precio"><label class="label__precio">S/. 6.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/macarilla.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Mascarilla KN-95</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 18.00</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/ensure.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Ensure Advance</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 94.40</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/hidroxidoAlu.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Hidroxido de Aluminio</label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 4.80</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                    <div class="card__productos">
+                        <div class="producto__imagenes"><img class="img__producto" src="img/clotrimazol.jpg" alt="">
+                            <div class="img__more"><a href="#" class="label__more">Vista rápida</a></div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto">Clotrimazol 1% </label></div>
+                        <div class="producto__precio"><label class="label__precio">S/. 2.90</label></div>
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__contenedor">
+                <div class="footer__redes">
+                    <h5 class="container__redes-h5">SIGUENOS EN</h5>
+                    <div class="container__iconos"><a href="https://www.facebook.com" target="_blank"><i
+                                class="fab fa-facebook"></i></a><a href="https://www.twitter.com" target="_blank"><i
+                                class="fab fa-twitter"></i></a> <a href="https://www.instagram.com" target="_blank"><i
+                                class="fab fa-instagram"></i></a> <a href="https://www.youtube.com" target="_blank"><i
+                                class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer__contacto">
+                    <h5>CONTACTANOS</h5>
+                    <p>
+                        <i class="fas fa-phone-alt"></i> 01558-5062
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i> cibersalud@gmail.com
+                    </p>
+                </div>
+                <div class="footer__copy">
+                    <p>&copy CIBERSALUD. Todos los derechos reservados</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/venta.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</body>
+
+</html>
