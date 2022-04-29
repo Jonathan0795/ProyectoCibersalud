@@ -16,162 +16,184 @@
 
 <body class="body">
     <div class="container__prueba">
-    <nav class="info__header" id="info__nav">
-        <a href="" class="a__header">Nuestras Boticas</a>
-        <a href="" class="a__header">Teléfono (01) 558-5062</a>
-    </nav>
-    <header class="header">
-        <div class="nav__header">
-            <!-- <div class="header__lista"> -->
-
-
-            <div class="hearder__titulo">
-                <a class="titulo__a" href="inicio.html">Cibersalud</a>
-            </div>
-
-            <div class="header__busqueda">
-                <input type="text" class="input__busqueda" placeholder="Busca un producto"><a href="#"
-                    class="button__busqueda"><i class="fas fa-search"></i></a>
-            </div>
-            <ul class="header__lista">
-                <li class="lista__item ">
-                    <div class="contador__carrito">
-                        <a href="carrito.html" class="fas fa-shopping-cart"></a><span
-                            class="span__shopping">1</span>
-                    </div>
-                </li>
-                <li class="lista__item"><a class="item__link item__link-usuario" href="#">Aguinaga Juarez
-                        Jonathan
-                        Cesar</a></li>
-                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
-                    <ul class="lista__show">
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"> <i
-                                    class="fa-solid fa-user"></i> Perfil</a>
-                        </li>
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"><i
-                                    class="fa-solid fa-box-open"></i> Pedidos</a>
-                        </li>
-                        <li class="lista__item"><a class="item__link item__link-close " href="servPro?opcion=c"> <i
-                                    class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
-                        </li>
+        <nav class="info__header" id="info__nav">
+            <a href="" class="a__header">Nuestras Boticas</a>
+            <a href="" class="a__header">Teléfono (01) 558-5062</a>
+        </nav>
+        <header class="header">
+            <div class="nav__header">
+                <!-- <div class="header__lista"> -->
+                <div class="header__menu">
+                    <i class="fa-solid fa-align-justify"></i>
+                    <ul class="lista__show-menu">
+                        <li class="categorias__desc"><a href="#" class="des__link">Medicinas</a></li>
+                        <li class="categorias__desc"><a href="#" class="des__link">Cuidado Personal</a></li>
+                        <li class="categorias__desc"><a href="#" class="des__link">Belleza</a></li>
+                        <li class="categorias__desc"><a href="#" class="des__link">Vitaminas y Suplementos</a></li>
+                        <li class="categorias__desc"><a href="#" class="des__link">Dermatología Cosmética</a></li>
                     </ul>
-                </li>
-            </ul>
-            <!-- </div> -->
-        </div>
-    </header>
-    <main class="main">
-        <div class="contenedor">
-            <div class="contenedor__titulo">
-                <h1 class="titulo__h1"">
-                    <i class=" fas fa-shopping-cart"></i> CARRITO DE COMPRA
-                </h1>
-            </div>
-            <div class="contenedor__carrito">
-                <div class="carrito__table">
-                    <form class="form__carrito" action="citserv" method="get" title="Carrito">
-                        <div class="carrito">
-                            <div class="carrito__imagen"><img class="imagen__producto" src="img/retaron.jpg" alt="">
-                            </div>
-                            <div class="carrito__descripcion">
-                                <div class="descipcion_item"><label class="item__label">Crema de Mano</label><label
-                                        class="item__label">S/. 50.00</label></div>
-                                <div class="descripcion__precio"><label class="item__label">S/. 50.00</label></div>
-                                <div class="descripcion__cantidad">
-                                    <div class="cantidad"><button class="restar"
-                                            title="Dismiunir la cantidad">-</button><input type="text"
-                                            class="cantidad__input" value="1"><button class="sumar"
-                                            title="Aumentar la cantidad">+</button></div>
-                                </div>
-                            </div>
-                            <div class="descripcion__eliminar"><a href="#"><i class="fa-solid fa-xmark"></i></a></div>
-                        </div>
-                        <div class="carrito">
-                            <div class="carrito__imagen"><img class="imagen__producto" src="img/macarilla.jpg" alt="">
-                            </div>
-                            <div class="carrito__descripcion">
-                                <div class="descipcion_item"><label class="item__label">Mascarilla KN-95</label><label
-                                        class="item__label">S/. 25.00</label></div>
-                                <div class="descripcion__precio"><label class="item__label">S/. 25.00</label></div>
-                                <div class="descripcion__cantidad">
-                                    <div class="cantidad"><button class="restar"
-                                            title="Dismiunir la cantidad">-</button><input type="text"
-                                            class="cantidad__input" value="1"><button class="sumar"
-                                            title="Aumentar la cantidad">+</button></div>
-                                </div>
-                            </div>
-                            <div class="descripcion__eliminar"><a href="#" title="Eliminar producto"><i class="fa-solid fa-xmark"></i></a></div>
-                        </div>
-
-                    </form>
                 </div>
-                <div class="carrito__canasta">
-                    <div class="canasta__descripcion">
-                        <h2 class="titulo__h2">Resumen del pedido</h2>
-                        <div class="canasta__cantidad">
-                            <div class="cantidad__des">
-                                <label>Costo ( 0 producto) </label>
-                            </div>
-                            <div class="canasta__precios">
-                                <label>
-                                    <fmt:setLocale value="es_PE" />
-                                    <fmt:formatNumber value="${subTotalVenta}" type="currency">S/ 0.00
-                                    </fmt:formatNumber>
-                                </label>
-                            </div>
+
+                <div class="hearder__titulo">
+                    <a class="titulo__a" href="productos.html">Cibersalud</a>
+                </div>
+
+                <div class="header__busqueda">
+                    <input type="text" class="input__busqueda" placeholder="Busca un producto"><a href="#"
+                        class="button__busqueda"><i class="fas fa-search"></i></a>
+                </div>
+                <ul class="header__lista">
+                    <li class="lista__item ">
+                        <div class="contador__carrito">
+                            <a href="carrito.html" class="fas fa-shopping-cart"></a><span
+                                class="span__shopping">1</span>
                         </div>
-                        <div class="descripcion__subtotal">
-                            <div class="subtotal__des">
-                                <label>Subtotal</label>
+                    </li>
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#">Aguinaga Juarez
+                            Jonathan
+                            Cesar</a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                        <ul class="lista__show">
+                            <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"> <i
+                                        class="fa-solid fa-user"></i> Perfil</a>
+                            </li>
+                            <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html"><i
+                                        class="fa-solid fa-box-open"></i> Pedidos</a>
+                            </li>
+                            <li class="lista__item"><a class="item__link item__link-close " href="servPro?opcion=c"> <i
+                                        class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- </div> -->
+            </div>
+        </header>
+        <main class="main">
+            <div class="contenedor">
+                <div class="contenedor__titulo">
+                    <h1 class="titulo__h1"">
+                    <i class=" fas fa-shopping-cart"></i> CARRITO DE COMPRA
+                    </h1>
+                </div>
+                <div class="contenedor__carrito">
+                    <div class="carrito__table">
+                        <form class="form__carrito" action="citserv" method="get" title="Carrito">
+                            <div class="carrito">
+                                <div class="carrito__imagen"><img class="imagen__producto" src="img/retaron.jpg" alt="">
+                                </div>
+                                <div class="carrito__descripcion">
+                                    <div class="descipcion_item"><label class="item__label">Crema de Mano</label><label
+                                            class="item__label">S/. 50.00</label></div>
+                                    <div class="descripcion__precio"><label class="item__label">S/. 50.00</label></div>
+                                    <div class="descripcion__cantidad">
+                                        <div class="cantidad"><button class="restar"
+                                                title="Dismiunir la cantidad">-</button><input type="text"
+                                                class="cantidad__input" value="1"><button class="sumar"
+                                                title="Aumentar la cantidad">+</button></div>
+                                    </div>
+                                </div>
+                                <div class="descripcion__eliminar"><a href="#"><i class="fa-solid fa-xmark"></i></a>
+                                </div>
                             </div>
-                            <div class="canasta__precios">
-                                <label>
-                                    <fmt:setLocale value="es_PE" />
-                                    <fmt:formatNumber value="${subTotalVenta}" type="currency">S/ 0.00
-                                    </fmt:formatNumber>
-                                </label>
+                            <div class="carrito">
+                                <div class="carrito__imagen"><img class="imagen__producto" src="img/macarilla.jpg"
+                                        alt="">
+                                </div>
+                                <div class="carrito__descripcion">
+                                    <div class="descipcion_item"><label class="item__label">Mascarilla
+                                            KN-95</label><label class="item__label">S/. 25.00</label></div>
+                                    <div class="descripcion__precio"><label class="item__label">S/. 25.00</label></div>
+                                    <div class="descripcion__cantidad">
+                                        <div class="cantidad"><button class="restar"
+                                                title="Dismiunir la cantidad">-</button><input type="text"
+                                                class="cantidad__input" value="1"><button class="sumar"
+                                                title="Aumentar la cantidad">+</button></div>
+                                    </div>
+                                </div>
+                                <div class="descripcion__eliminar"><a href="#" title="Eliminar producto"><i
+                                            class="fa-solid fa-xmark"></i></a></div>
                             </div>
-                        </div>
-                        <form class="form__button" action="venServ" method="post">
-                            <button type="submit" name="opcion" value="pr" class="btn btn-dark">
-                                Continuar <span class="glyphicon glyphicon-ok"></span>
-                            </button>
+
                         </form>
-                        <p class="p__agregar">
-                            <a href="productos.html">Agregar productos</a>
-                        </p>
+                    </div>
+                    <div class="carrito__canasta">
+                        <div class="canasta__descripcion">
+                            <h2 class="titulo__h2">Resumen del pedido</h2>
+                            <div class="canasta__cantidad">
+                                <div class="cantidad__des">
+                                    <label>Costo ( 0 producto) </label>
+                                </div>
+                                <div class="canasta__precios">
+                                    <label>
+                                        <fmt:setLocale value="es_PE" />
+                                        <fmt:formatNumber value="${subTotalVenta}" type="currency">S/ 0.00
+                                        </fmt:formatNumber>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="descripcion__subtotal">
+                                <div class="subtotal__des">
+                                    <label>Subtotal</label>
+                                </div>
+                                <div class="canasta__precios">
+                                    <label>
+                                        <fmt:setLocale value="es_PE" />
+                                        <fmt:formatNumber value="${subTotalVenta}" type="currency">S/ 0.00
+                                        </fmt:formatNumber>
+                                    </label>
+                                </div>
+                            </div>
+                            <form class="form__button" action="venServ" method="post">
+                                <button type="submit" name="opcion" value="pr" class="btn btn-dark">
+                                    Continuar <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                            </form>
+                            <p class="p__agregar">
+                                <a href="productos.html">Agregar productos</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        ${mensaje}
-    </main>
-    <footer class="footer">
-        <div class="footer__contenedor">
-            <div class="footer__redes">
-                <h5 class="container__redes-h5">SIGUENOS EN</h5>
-                <div class="container__iconos"><a href="https://www.facebook.com" target="_blank"><i
-                            class="fab fa-facebook"></i></a><a href="https://www.twitter.com" target="_blank"><i
-                            class="fab fa-twitter"></i></a> <a href="https://www.instagram.com" target="_blank"><i
-                            class="fab fa-instagram"></i></a> <a href="https://www.youtube.com" target="_blank"><i
-                            class="fab fa-youtube"></i></a></div>
+            ${mensaje}
+        </main>
+        <footer class="footer">
+            <div class="footer__contenedor">
+                <div class="footer__redes">
+                    <h5 class="container__redes-h5">SIGUENOS EN</h5>
+                    <div class="container__iconos"><a href="https://www.facebook.com" target="_blank"><i
+                                class="fab fa-facebook"></i></a><a href="https://www.twitter.com" target="_blank"><i
+                                class="fab fa-twitter"></i></a> <a href="https://www.instagram.com" target="_blank"><i
+                                class="fab fa-instagram"></i></a> <a href="https://www.youtube.com" target="_blank"><i
+                                class="fab fa-youtube"></i></a></div>
 
+                </div>
+                <div class="footer__contacto">
+                    <h5 class="container__contacto-h5">CONTACTANOS</h5>
+                    <p>
+                        <i class="fas fa-phone-alt"></i> 01558-5062
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i> cibersalud@gmail.com
+                    </p>
+                </div>
+                <div class="footer__pagos">
+                    <div class="pagos__title">
+                        <p class="p_title-p">Medios de pago</p>
+                    </div>
+                    <div class="pagos__img">
+                        <img src="img/pagos/48-diners-club.svg" class="img__pagos"><img src="img/pagos/footer-amex.svg"
+                            class="img__pagos"><img src="img/pagos/footer-mastercard.svg" class="img__pagos"><img
+                            src="img/pagos/footer-visa.svg" class="img__pagos">
+                    </div>
+                </div>
+                <div class="footer__copy">
+                    <p>&copy CIBERSALUD. Todos los derechos reservados</p>
+                </div>
             </div>
-            <div class="footer__contacto">
-                <h5>CONTACTANOS</h5>
-                <p>
-                    <i class="fas fa-phone-alt"></i> 01558-5062
-                </p>
-                <p>
-                    <i class="fas fa-envelope"></i> cibersalud@gmail.com
-                </p>
-            </div>
-            <div class="footer__copy">
-                <p>&copy CIBERSALUD. Todos los derechos reservados</p>
-            </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
     <script src="js/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
