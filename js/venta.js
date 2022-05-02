@@ -1,4 +1,4 @@
-const openModal = document.querySelectorAll('.button__agregar');
+const openModal = document.querySelectorAll('.button__agregar, .contador__carrito, .btn-des-Pro');
 const modal = document.querySelector('.modal__carrito');
 const closeModal = document.querySelector('.botton__ocultar');
 openModal.forEach(openModal => {
@@ -12,7 +12,7 @@ closeModal.addEventListener('click', (e) => {
   modal.classList.remove('modal--show');
 });
 
-
+/*
 let ubicacionPrincipal = window.pageYOffset;
 let $nav = document.querySelector('#info__nav')
 let $header = document.querySelector('#nada')
@@ -26,8 +26,19 @@ window.addEventListener('scroll', function () {
     $nav.style.top = '-40px'
   }
   ubicacionPrincipal = ubicacionActual
-})
+})*/
+window.onscroll = function () { myFunction() };
 
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 /**************************************SLIDER**********************************************************/
 let slider = document.querySelector(".slider-contenedor")
 let sliderIndividual = document.querySelectorAll(".contenido-slider")
@@ -58,3 +69,4 @@ function slides() {
     }, 1500)
   }
 }
+/*************************************************************************** */
