@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inciar Sesión</title>
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/venta.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="body">
+    <div class="container__prueba">
+        <header class="header" id="myHeader">
+            <div class="nav__header-Pay">
+                <div class="hearder__titulo">
+                    <a class="titulo__a" href="productos.html">Cibersalud</a>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+
+            <div class="container-usuario">
+                <a href="carrito.html" class="a-arrow"><i class="fa-solid fa-angle-left"></i></a>
+                <div class="usuario-form-1">
+
+                    <form action="" class="formulario-usuario">
+                        <div class="usuario-logueo">
+                            <label for="" class="lbl-logo">Cibersalud</label>
+                            <lable class="lbl-titulo">Bienvenido</lable>
+                            <!-- <div class="logueo-input"> -->
+                            <div class="div-lbl-lbl"><label for="" class="lbl-input">Correo Electrónico</label></div>
+                            <input type="text" class="input-logueo">
+                            <div class="div-lbl-lbl"> <label for="" class="lbl-input">Contraseña</label></div>
+                            <div class="password"><input type="password" class="input-logueo" id="pwd"><span id="span-e"
+                                    class="span-eye">
+                                    <i class="fa-solid fa-eye-low-vision" aria-hidden="true" type="button" id="eye"></i>
+                                </span></div>
+
+                            <div class="div-lbl-lbl-C"><label for="" class="lbl-input-C">¿Olvidaste tu
+                                    contraseña?</label></div>
+                            <a href="#" class="button-loguin">Ingresar</a>
+                            <div class="div-nuevo-loguin"><span class="spn-logueo">¿No tienes una cuenta? <a
+                                        href="usuarioRegistro.html" class="a-logueo">Registrate</a></span></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="usuario-img-2">
+                    <img src="img/undraw_two_factor_authentication_namy.svg" alt="">
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer-Pay">
+            <div class="footer__contact-Pay">
+                <div class="contact-Pay-Img"><img src="img/undraw_contact_us_re_4qqt.svg" class="img-Pay"></div>
+                <div class="contact-Pay-Info">
+                    <div class="contac-1">
+                        <p class="contacto-help">¿Necesitas ayuda?</p>
+                        <p>Conversa con nosotros de lunes a sabado de 7:00 am hasta las 6:00 pm.</p>
+                    </div>
+                    <div class="contac-2">
+                        <p class="p-help">
+                            <i class="fas fa-phone-alt"></i> Llámanos al <span class="span-help span-tlf">(01)
+                                558-5062</span>
+                        </p>
+                        <p class="p-help">
+                            <i class="fas fa-envelope"></i> Escríbenos a <span
+                                class="span-help">cibersalud@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>Copyright&copy Cibersalud 2022 Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/venta.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</body>
+<script>function show() {
+        var p = document.getElementById('pwd');
+        p.setAttribute('type', 'text');
+    }
+
+    function hide() {
+        var p = document.getElementById('pwd');
+        p.setAttribute('type', 'password');
+    }
+
+    var pwShown = 0;
+    var icon = document.getElementById('eye');
+    document.getElementById("eye").addEventListener("click", function () {
+        if (pwShown == 0) {
+            pwShown = 1;
+            icon.classList.toggle('fa-expand-alt');
+            show();
+        } else {
+            pwShown = 0;
+            icon.classList.toggle('fa-expand-alt');
+            hide();
+        }
+    }, false);
+
+
+
+    // const openRegistro = document.querySelector('.a-logueo');
+    // const usuLogueo = document.querySelector('.usuario-logueo');
+    // const usuRegistro = document.querySelector('.usuario-registro');
+    // const closeLogueo = document.querySelector('.botton__ocultar');
+    // openRegistro.addEventListener('click', (e) => {
+    //     //e.preventDefault();
+    //     usuLogueo.classList.add('hide-usuario-form-1');
+    // });
+    // closeLogueo.addEventListener('click', (e) => {
+    //     //e.preventDefault();
+    //     usuLogueo.classList.remove('hide-usuario-form-1');
+    // });
+</script>
+
+</html>

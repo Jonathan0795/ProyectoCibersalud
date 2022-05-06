@@ -11,22 +11,7 @@ closeModal.addEventListener('click', (e) => {
   //e.preventDefault();
   modal.classList.remove('modal--show');
 });
-
-/*
-let ubicacionPrincipal = window.pageYOffset;
-let $nav = document.querySelector('#info__nav')
-let $header = document.querySelector('#nada')
-
-window.addEventListener('scroll', function () {
-  let ubicacionActual = window.pageYOffset
-  console.log(ubicacionActual)
-  if (ubicacionPrincipal >= ubicacionActual) {
-    $nav.style.top = '0px'
-  } else {
-    $nav.style.top = '-40px'
-  }
-  ubicacionPrincipal = ubicacionActual
-})*/
+/**************************************************/
 window.onscroll = function () { myFunction() };
 
 var header = document.getElementById("myHeader");
@@ -54,8 +39,6 @@ setInterval(function () {
   slides();
 }, intervalo);
 
-
-
 function slides() {
   slider.style.transform = "translate(" + (-width * contador) + "px)";
   slider.style.transition = "transform .8s";
@@ -70,4 +53,14 @@ function slides() {
   }
 }
 /*************************************************************************** */
-
+// const openRegistro = document.querySelector('.a-logueo');
+// const usuLogueo = document.querySelector('.usuario-logueo');
+// const closeLogueo = document.querySelector('.botton__ocultar');
+// openRegistro.addEventListener('click', (e) => {
+// 	//e.preventDefault();
+// 	usuLogueo.classList.add('hide-usuario-form-1');
+// });
+// closeLogueo.addEventListener('click', (e) => {
+// 	//e.preventDefault();
+// 	usuLogueo.classList.remove('hide-usuario-form-1');
+// });

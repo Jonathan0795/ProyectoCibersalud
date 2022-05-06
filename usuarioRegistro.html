@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/venta.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="body">
+    <div class="container__prueba">
+        <header class="header" id="myHeader">
+            <div class="nav__header-Pay">
+                <div class="hearder__titulo">
+                    <a class="titulo__a" href="productos.html">Cibersalud</a>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container-usuario">
+                <a title="Inicio" href="productos.html" class="a-home"><i class="fa-solid fa-house"></i></a>
+                <div class="usuario-img-2">
+                    <img src="img/undraw_real_time_sync_re_nky7.svg" alt="">
+                </div>
+                <div class="usuario-form-2">
+                    <form action="" class="formulario-usuario">
+                        <div class="usuario-registro">
+                            <lable class="lbl-titulo-R">¿No estás registrado?</lable>
+                            <label for="" class="lbl-logo-R">Completa el siguiente formulario</label>
+                            <div class="form-row form-colum-R">
+                                <div class="form-group col-md-12">
+                                    <b><label for="exampleInputEmail1">Nombre</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row form-colum-R">
+                                <div class="form-group col-md-6">
+                                    <b><label for="exampleInputEmail1">Apellido Paterno</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <b><label for="exampleInputEmail1">Apellido Materno</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row form-colum-R">
+                                <div class=" form-group col-md-5">
+                                    <b><label for="exampleInputEmail1">Tipo Documento</label></b>
+                                    <select name="cboSexo" class="form-control" id="form-control">
+                                        <option value="">Seleccione</option>
+                                        <option value="1">Dni</option>
+                                        <option value="2">Carnet Extranjería</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <b><label for="exampleInputEmail1">Documento</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row form-colum-R">
+                                <div class="form-group col-md-7">
+                                    <b><label for="exampleInputEmail1">Fecha Nacimiento</label></b>
+                                    <input type="date" class="form-control" id="form-control">
+                                </div>
+                                <div class=" form-group col-md-5">
+                                    <b><label for="exampleInputEmail1">Sexo</label></b>
+                                    <select name="cboSexo" class="form-control" id="form-control">
+                                        <option value="">Seleccione</option>
+                                        <option value="1">Masculino</option>
+                                        <option value="2">Femenino</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row form-colum-R form-top">
+                                <div class="form-group col-md-12">
+                                    <b><label for="exampleInputEmail1">Correo Electrónico</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row form-colum-R">
+                                <div class="form-group col-md-12">
+                                    <b><label for="exampleInputEmail1">Contraseña</label></b>
+                                    <input type="text" class="form-control" id="form-control">
+                                </div>
+                            </div>
+
+                            <a href="#" class="button-loguin">Registrarme</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="footer-Pay">
+            <div class="footer__contact-Pay">
+                <div class="contact-Pay-Img"><img src="img/undraw_contact_us_re_4qqt.svg" class="img-Pay"></div>
+                <div class="contact-Pay-Info">
+                    <div class="contac-1">
+                        <p class="contacto-help">¿Necesitas ayuda?</p>
+                        <p>Conversa con nosotros de lunes a sabado de 7:00 am hasta las 6:00 pm.</p>
+                    </div>
+                    <div class="contac-2">
+                        <p class="p-help">
+                            <i class="fas fa-phone-alt"></i> Llámanos al <span class="span-help span-tlf">(01)
+                                558-5062</span>
+                        </p>
+                        <p class="p-help">
+                            <i class="fas fa-envelope"></i> Escríbenos a <span
+                                class="span-help">cibersalud@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>Copyright&copy Cibersalud 2022 Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/venta.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</body>
+
+</html>
