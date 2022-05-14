@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es-PE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cibersalud &copy</title>
+    <link rel="icon" href="../icon/c.ico">
+    <link href="../css/venta.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="body">
+
+    <section class="modal__carrito">
+        <div class="modal__container-carrito">
+            <form class="form__modal-carrito" action="citserv" method="get" title="Registro Laboratorio">
+                <div class="modal__carrito-titulo"><a href="#" class="botton__ocultar"><i
+                            class="fa-solid fa-angle-right"></i></a><label class="label__titulo">Bolsa de compra</label>
+                </div>
+                <div class="modal__carrito-item">
+                    <div class="card__item-modal">
+                        <div class="card__img-modal"><img src="img/ampolla.jpg" alt="" class="img__card-modal">
+                        </div>
+                        <div class="card__container-modal">
+                            <div class="container__title-modal"><label class="label__title-modal">Ampolla</label>
+                            </div>
+                            <div class="container__precio-modal"><label class="label__precio-modal">S/.
+                                    18.00</label>
+                            </div>
+                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
+                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
+                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                        </div>
+                        <div class="card__delete">
+                            <a class="delete-ico" href="#"> <i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal__carrito-footer">
+                    <div class="footer__subtotal-card"><label class="label__subtotal-title">Subtotal</label><label
+                            class="label__subtotal-car">S/. 150.00</label></div>
+                    <div class="footer__button-modal"><a href="carrito.html" title="" class="button__carrito-modal">Ver
+                            carrito</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="container__prueba">
+        <nav class="info__header" id="info__nav">
+            <a href="" class="a__header">Nuestras Boticas</a>
+            <a href="" class="a__header">Teléfono (01) 558-5062</a>
+        </nav>
+        <header class="header" id="myHeader">
+
+            <div class="nav__header">
+                <div class="header__menu">
+                    <i class="fa-solid fa-align-justify">
+                        <ul class="lista__show-menu">
+                            <li th:each="c: ${listcategoria}" class="categorias__desc">
+                                <a class="des__link" href="#">[[${c.desccategoria}]]</a>
+                                <ul class="sub__categorias">
+                                    <li class="subcategorias__desc" th:each="s: ${c.categoriaHijos}">
+                                        <a class="desc__link-sub" th:href="@{'?cat=' + ${s.idcategorias}}">
+                                            [[${s.desccategoria}]]</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </i>
+                    <!--menu -->
+                </div>
+                <div class="hearder__titulo">
+                    <a class="titulo__a" href="inicio.html">Cibersalud</a>
+                </div>
+
+                <div class="header__busqueda">
+                    <input type="text" class="input__busqueda" placeholder="Busca un producto" id="buscar_producto"><a
+                        class="button__busqueda"><i class="fas fa-search"></i></a>
+                </div>
+                <ul class="header__lista">
+                    <li class="lista__item ">
+                        <div class="contador__carrito ">
+                            <a href="#" class="fas fa-shopping-cart btn__exa"></a><span class="span__shopping">1</span>
+                        </div>
+                    </li>
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#"></a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+
+                        <ul class="lista__show">
+                            <form class="form-login-header" action="">
+                                <li class="lista__item lista__item-barra lista-Logueo">
+                                    <input type="text" class="input-logueo-Head" placeholder="Usuario">
+                                    <input type="password" class="input-logueo-Head" placeholder="Contraseña">
+                                    <a href="#" class="btn-Inicio-Head">Iniciar Sesión</a>
+                                    <label for="" class="lbl-Inicio-Head">¿No tienes cuenta?</label>
+                                    <a href="/cliente/nuevo" class="btn-Registro-Head">Crear Cuenta</a>
+                                </li>
+                                <li class="lista__item lista__item-barra"><a class="item__link"
+                                        href="usuarioPerfil.html"> <i class="fa-solid fa-user"></i> Perfil</a>
+                                </li>
+                                <li class="lista__item lista__item-barra"><a class="item__link"
+                                        href="usuarioPedidos.html"><i class="fa-solid fa-box-open"></i> Pedidos</a>
+                                </li>
+                                <li class="lista__item"><a class="item__link item__link-close " href="servPro?opcion=c">
+                                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a>
+                                </li>
+                            </form>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <div class="contenedor-slider">
+                <div class="slider-contenedor">
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
+                                ti y a tu familia el servicio que mereces.</h2>
+                            <a href="#">Contactanos</a>
+                        </div>
+                        <img src="../img/Doctor_Monochromatic.svg" alt="">
+
+                    </section>
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>Su salud es nuestra prioridad. El alivo que necesitas lo encontrás en nuestra farmacia
+                                ofreciendote gran variedad de productos al mejor precio y al alcance de tu bolsillo.
+                            </h2>
+                        </div>
+                        <img src="../img/Team meeting_Monochromatic.svg" alt="">
+
+                    </section>
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>Encuentra lo que necesitas al alcance de tus manos. Descarga nuestra aplicación en tu
+                                celular. Disponible para Google Play y App Store</h2>
+                        </div>
+                        <img src="../img/undraw_mobile_application_re_13u3.svg" alt="">
+
+                    </section>
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>Porque sabemos que te gusta siempre lo mejor. Muy pronto podras realizar tus compras sin
+                                salir de casa de una manera segura y rápida.</h2>
+                            <a href="#">Contact us</a>
+                        </div>
+                        <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
+
+                    </section>
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>Contamos con los mejores profesionales de la salud y tecnología medica para ofrecerte a
+                                ti y a tu familia el servicio que mereces 5</h2>
+                            <a href="#">Contactanos</a>
+                        </div>
+                        <img src="../img/Doctor_Monochromatic.svg" alt="">
+
+                    </section>
+                    <section class="contenido-slider">
+                        <div>
+                            <h2>>Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
+                                ti y a tu familia el servicio que mereces. 6</h2>
+                            <a href="#">Contact us</a>
+                        </div>
+                        <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
+
+                    </section>
+                </div>
+            </div>
+            <div class=" contenedor__productos">
+                <div class="container__card">
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <nav arial-label="Pagination">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item" th:classappend="${prev == 0 ? 'disabled':''}">
+                                    <a class="page-link" th:href="@{|/?page=${prev}|}">Anterior</a>
+                                </li>
+                                <li class="page-item" th:each="page : ${pages}"
+                                    th:classappend="${current==page ?'active':''}">
+                                    <a class="page-link" th:href="@{|/?page=${page}|}" th:text="${page}"></a>
+                                </li>
+                                <li class="page-item" th:classappend="${current == last ? 'disabled':''}">
+                                    <a class="page-link" th:href="@{|/?page=${next}|}">Siguiente</a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+            </div>
+            <div class="conte__img-info">
+                <img src="../img/demo.jpg" alt="" class="img__info-adi">
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__contenedor">
+                <div class="footer__redes">
+                    <div class="redes-0">
+                        <a href="#" class="a-red-0">
+                            Acerca de Cibersalud
+                        </a>
+                        <a href="#" class="a-red-0">
+                            Historia
+                        </a>
+                        <a href="#" class="a-red-0">
+                            Política de Cookies
+                        </a>
+                        <a href="" class="a-red-0">
+                            Retiro en Tienda
+                        </a>
+                        <a href="" class="a-red-0">
+                            Políticas de Privacidad
+                        </a>
+                        <a href="" class="a-red-0">
+                            Término y Condiciones
+                        </a>
+                    </div>
+                    <div class="redes-2">
+                        <!-- <p>Libro de Reclamaciones</p> -->
+                        <a href="#"> <img src="../img/Group_76.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer__pagos">
+                    <div class="conte-pagos">
+                        <div class="pagos__app">
+                            <p>Descarga nuestra app en</p>
+                            <img src="../img/bot-appstore-mob.jpg" alt="">
+                            <img src="../img/bot-googleplay-mob.jpg" alt="">
+                        </div>
+                        <div class="pagos__img">
+                            <p>Medios de pago</p>
+                            <img src="../img/pagos/48-diners-club.svg" class="img__pagos"><img
+                                src="../img/pagos/footer-amex.svg" class="img__pagos"><img
+                                src="../img/pagos/footer-mastercard.svg" class="img__pagos"><img
+                                src="../img/pagos/footer-visa.svg" class="img__pagos">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__contacto">
+                    <div class="container-contac">
+                        <div class="contac-1">
+                            <p class="contacto-help">¿Necesitas ayuda?</p>
+                            <p>Conversa con nosotros de lunes a sabado de 7:00 am hasta las 6:00 pm.</p>
+                        </div>
+                        <div class="contac-2">
+                            <p class="p-help">
+                                <i class="fas fa-phone-alt"></i> Llámanos al <span class="span-help span-tlf">(01)
+                                    558-5062</span>
+                            </p>
+                            <p class="p-help">
+                                <i class="fas fa-envelope"></i> Escríbenos a <span
+                                    class="span-help">cibersalud@gmail.com</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="redes-1">
+                        <label class="container__redes-h5">Síguenos</label>
+                        <div class="container__iconos"><a href="https://www.facebook.com" target="_blank"><i
+                                    class="fab fa-facebook"></i></a><a href="https://www.twitter.com" target="_blank"><i
+                                    class="fab fa-twitter"></i></a> <a href="https://www.instagram.com"
+                                target="_blank"><i class="fab fa-instagram"></i></a> <a href="https://www.youtube.com"
+                                target="_blank"><i class="fab fa-youtube"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>Copyright&copy Cibersalud 2022 Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="../js/venta.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <script th:replace="autocomplete-producto ::javascript"></script>
+</body>
+
+</html>
