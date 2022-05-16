@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cibersalud &copy</title>
-    <link rel="icon" href="../icon/c.ico">
-    <link href="../css/venta.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="icon" href="icon/c.ico">
+    <link href="css/venta.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -121,65 +121,72 @@
             </div>
         </header>
         <main class="main">
-            <div class="contenedor-slider">
-                <div class="slider-contenedor">
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
-                                ti y a tu familia el servicio que mereces.</h2>
-                            <a href="#">Contactanos</a>
-                        </div>
-                        <img src="../img/Doctor_Monochromatic.svg" alt="">
-
-                    </section>
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>Su salud es nuestra prioridad. El alivo que necesitas lo encontrás en nuestra farmacia
-                                ofreciendote gran variedad de productos al mejor precio y al alcance de tu bolsillo.
-                            </h2>
-                        </div>
-                        <img src="../img/Team meeting_Monochromatic.svg" alt="">
-
-                    </section>
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>Encuentra lo que necesitas al alcance de tus manos. Descarga nuestra aplicación en tu
-                                celular. Disponible para Google Play y App Store</h2>
-                        </div>
-                        <img src="../img/undraw_mobile_application_re_13u3.svg" alt="">
-
-                    </section>
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>Porque sabemos que te gusta siempre lo mejor. Muy pronto podras realizar tus compras sin
-                                salir de casa de una manera segura y rápida.</h2>
-                            <a href="#">Contact us</a>
-                        </div>
-                        <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
-
-                    </section>
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>Contamos con los mejores profesionales de la salud y tecnología medica para ofrecerte a
-                                ti y a tu familia el servicio que mereces 5</h2>
-                            <a href="#">Contactanos</a>
-                        </div>
-                        <img src="../img/Doctor_Monochromatic.svg" alt="">
-
-                    </section>
-                    <section class="contenido-slider">
-                        <div>
-                            <h2>>Contamos con los mejores profesionales de la salud y tecnología médica para ofrecerte a
-                                ti y a tu familia el servicio que mereces. 6</h2>
-                            <a href="#">Contact us</a>
-                        </div>
-                        <img src="../img/undraw_delivery_address_re_cjca.svg" alt="">
-
-                    </section>
-                </div>
-            </div>
             <div class=" contenedor__productos">
+                <div class="container__titulo_productos">
+                    <h1 class="titulo_productos-h1">Farmacia</h1>
+                </div>
+                <aside class="aside__categorias">
+                    <ul class="ul_aside-cat">
+                        <a th:href="@{'../busqueda/categoria?cat=' + ${c.idcategorias}}"
+                            class="a__aside-cat">Farmacia</a>
+                        <li th:each="s: ${c.categoriaHijos}" class="li__aside-cat">
+                            <a href="#">
+                                <i class="fa-solid fa-angles-right"></i> Malestar Estomacal</a>
+                        </li>
+                        <li th:each="s: ${c.categoriaHijos}" class="li__aside-cat">
+                            <a href="#">
+                                <i class="fa-solid fa-angles-right"></i> Dolor Generalizado</a>
+                        </li>
+                        <li th:each="s: ${c.categoriaHijos}" class="li__aside-cat">
+                            <a href="#">
+                                <i class="fa-solid fa-angles-right"></i> Malestar General</a>
+                        </li>
+                        <li th:each="s: ${c.categoriaHijos}" class="li__aside-cat">
+                            <a href="#">
+                                <i class="fa-solid fa-angles-right"></i> Resfriado Comun</a>
+                        </li>
+                    </ul>
+                </aside>
                 <div class="container__card">
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" src="img/Productos/enterogermina_oral.jpg" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" href="#">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
                     <div th:each="p: ${list}" class="card__productos">
 
                         <div class="producto__imagenes">
@@ -189,7 +196,106 @@
                                 <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
                                     rápida</a>
                             </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
 
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
+                        </div>
+                        <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
+                        </div>
+
+                        <div class="producto__precio"><label class="label__precio"
+                                th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}"></label>
+                        </div>
+
+                        <div class="boton__producto"><a href="#" class="button__agregar">Agregar al carrito</a>
+                        </div>
+                    </div>
+                    <div th:each="p: ${list}" class="card__productos">
+
+                        <div class="producto__imagenes">
+                            <img class="img__producto" th:src="${'../img/Productos/'+p.urlproducto}" alt="">
+
+                            <div class="img__more">
+                                <a class="label__more" th:href="@{'detalle/producto?idProd=' + ${p.idproducto}}">Vista
+                                    rápida</a>
+                            </div>
                         </div>
                         <div class="producto__titulo"><label class="label__producto" th:text="${p.nombre}"></label>
                         </div>
@@ -224,10 +330,9 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
-
             </div>
             <div class="conte__img-info">
-                <img src="../img/demo.jpg" alt="" class="img__info-adi">
+                <img src="img/demo.jpg" alt="" class="img__info-adi">
             </div>
         </main>
         <footer class="footer">
@@ -255,22 +360,22 @@
                     </div>
                     <div class="redes-2">
                         <!-- <p>Libro de Reclamaciones</p> -->
-                        <a href="#"> <img src="../img/Group_76.jpg" alt=""></a>
+                        <a href="#"> <img src="img/Group_76.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="footer__pagos">
                     <div class="conte-pagos">
                         <div class="pagos__app">
                             <p>Descarga nuestra app en</p>
-                            <img src="../img/bot-appstore-mob.jpg" alt="">
-                            <img src="../img/bot-googleplay-mob.jpg" alt="">
+                            <img src="img/bot-appstore-mob.jpg" alt="">
+                            <img src="img/bot-googleplay-mob.jpg" alt="">
                         </div>
                         <div class="pagos__img">
                             <p>Medios de pago</p>
-                            <img src="../img/pagos/48-diners-club.svg" class="img__pagos"><img
-                                src="../img/pagos/footer-amex.svg" class="img__pagos"><img
-                                src="../img/pagos/footer-mastercard.svg" class="img__pagos"><img
-                                src="../img/pagos/footer-visa.svg" class="img__pagos">
+                            <img src="img/pagos/48-diners-club.svg" class="img__pagos"><img
+                                src="img/pagos/footer-amex.svg" class="img__pagos"><img
+                                src="img/pagos/footer-mastercard.svg" class="img__pagos"><img
+                                src="img/pagos/footer-visa.svg" class="img__pagos">
                         </div>
                     </div>
                 </div>
@@ -308,7 +413,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="../js/venta.js"></script>
+    <script src="js/venta.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
