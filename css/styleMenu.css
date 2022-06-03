@@ -1,7 +1,9 @@
 :root {
 	--color-fondo: rgba(250, 250, 250, .9);
-	--color-titulos: #CC0000;
+	--color-titulos: #a31111;
 	--color-background: #020B30;
+	--color-button: #8cc751;
+	--color-app: #73C2FB;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -107,6 +109,7 @@
 }
 
 .main__mant-prod {
+	width: 100%;
 	display: flex;
 	flex-grow: 2;
 	height: calc(100%-100px);
@@ -197,20 +200,202 @@
 	transition: height .4s;
 	height: 0;
 }
+
 /***************MANTENIMIENTO PRODUCTOS**********/
-.contenedor__Man-medicamentos{
+.contenedor__Man-medicamentos {
 	width: 100%;
 	background-color: rgb(246, 246, 246);
 }
 
-.mantenimiento-medicamentos{
-	width: 80%;
+.mantenimiento-medicamentos {
+	width: 90%;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
+	padding: 2rem 0;
 }
 
-/*****CARD*****/
+.medicamentos-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 1.5rem;
+}
+
+.h2-titulo-header {
+	margin: 0;
+	color: var(--color-background);
+}
+
+.fa-tablets {
+	font-size: 2.6rem;
+}
+
+.button__nuevo {
+	width: 15%;
+	height: 2.6rem;
+	text-decoration: none;
+	background-color: var(--color-button);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	color: #fff;
+}
+
+.button__nuevo:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.fa-plus {
+	padding-left: .5rem;
+}
+
+/* #td__botones{
+	display: flex;
+	justify-content: space-evenly;
+	
+} */
+.button__editar,
+.button__delete {
+	width: 35%;
+	height: 2.3rem;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.button__editar:hover,
+.button__delete:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.button__editar {
+	background-color: #122D93;
+}
+
+.button__delete {
+	background-color: #CC0000;
+}
+
+/******************REGISTRO MEDICAMENTOS********************/
+.contenedor__Regis-medicamentos {
+	width: 100%;
+	display: flex;
+
+}
+
+.contenedor__img-Prod {
+	width: 40%;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenedor__img-Prod img {
+	width: 90%;
+}
+
+.contendor-Form-Producto {
+	width: 60%;
+	padding: 2rem;
+	margin: auto;
+}
+
+.alert-info {
+	width: 60%;
+	margin: auto;
+}
+
+.contenedor-form-prod {
+	width: 95%;
+	margin: auto;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.header-pro {
+	color: var(--color-titulos);
+}
+
+.colum-button {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap: .5rem;
+	padding: 0 2rem;
+}
+
+.form-group label {
+	font-weight: 600;
+	padding: .350rem 0;
+	margin: 0;
+	color: var(--color-font);
+}
+
+.form-colum-R {
+	width: 75%;
+}
+
+.form-group {
+	margin-bottom: .7rem !important;
+}
+
+#form-control {
+	border: none;
+	height: 32px;
+	padding: 0.250rem 0.75rem;
+	border-bottom: 1px solid #bbb;
+	box-shadow: none;
+	font-size: 14px;
+	transition: box-shadow 300ms ease-out;
+}
+
+#form-control:focus {
+	box-shadow: 0px 0px 5px var(--color-app);
+}
+
+.button-registro-pro {
+	min-height: 2.5rem;
+	width: 6.5rem;
+	background-color: var(--color-app);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 600;
+	margin: .5rem 0 1.5rem 0;
+	border: none;
+}
+
+.button-registro-pro:hover {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px var(--color-app);
+}
+
+.button-registro-pro:active {
+	border: none;
+	outline: none;
+}
+
+.limpiar-pro {
+	background-color: var(--color-titulos);
+}
+
+.limpiar-pro:hover {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px var(--color-titulos)
+}
+
+/**************************CARD**********************/
 .card__profile {
 	width: 80%;
 	min-height: 90vh;
@@ -361,6 +546,25 @@
 
 #caja {
 	display: none;
+}
+
+.footer-Prod {
+	width: 100%;
+}
+
+.footer__Prod {
+	min-height: 50px;
+	background-color: var(--color-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__Prod p {
+	font-size: .800rem;
+	color: #fff;
+	font-weight: 550;
+	margin: 0;
 }
 
 @media (min-width:1024px) and (max-width:1400px) {

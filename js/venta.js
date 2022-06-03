@@ -53,14 +53,15 @@ function slides() {
   }
 }
 /*************************************************************************** */
-// const openRegistro = document.querySelector('.a-logueo');
-// const usuLogueo = document.querySelector('.usuario-logueo');
-// const closeLogueo = document.querySelector('.botton__ocultar');
-// openRegistro.addEventListener('click', (e) => {
-// 	//e.preventDefault();
-// 	usuLogueo.classList.add('hide-usuario-form-1');
-// });
-// closeLogueo.addEventListener('click', (e) => {
-// 	//e.preventDefault();
-// 	usuLogueo.classList.remove('hide-usuario-form-1');
-// });
+function mostrarPassword() {
+  var cambio = document.getElementById("txtPassword");
+  if (cambio.type == "password") {
+    cambio.type = "text";
+    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+  } else {
+    cambio.type = "password";
+    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+  }
+}
+
+

@@ -37,10 +37,12 @@
                             <div class="div-lbl-lbl"><label for="" class="lbl-input">Correo Electrónico</label></div>
                             <input type="text" class="input-logueo">
                             <div class="div-lbl-lbl"> <label for="" class="lbl-input">Contraseña</label></div>
-                            <div class="password"><input type="password" class="input-logueo" id="pwd"><span id="span-e"
-                                    class="span-eye">
-                                    <i class="fa-solid fa-eye-low-vision" aria-hidden="true" type="button" id="eye"></i>
-                                </span></div>
+                            <div class="password"><input type="password" class="input-logueo" id="txtPassword">
+
+                                <a id="span-e" class="span-eye" type="button" onclick="mostrarPassword()">
+                                    <span class="fa fa-eye-slash icon"></span></a>
+ 
+                            </div>
 
                             <div class="div-lbl-lbl-C"><label for="" class="lbl-input-C">¿Olvidaste tu
                                     contraseña?</label></div>
@@ -88,44 +90,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </body>
-<script>function show() {
-        var p = document.getElementById('pwd');
-        p.setAttribute('type', 'text');
-    }
 
-    function hide() {
-        var p = document.getElementById('pwd');
-        p.setAttribute('type', 'password');
-    }
+<script type="text/javascript">
+  
 
-    var pwShown = 0;
-    var icon = document.getElementById('eye');
-    document.getElementById("eye").addEventListener("click", function () {
-        if (pwShown == 0) {
-            pwShown = 1;
-            icon.classList.toggle('fa-expand-alt');
-            show();
-        } else {
-            pwShown = 0;
-            icon.classList.toggle('fa-expand-alt');
-            hide();
-        }
-    }, false);
-
-
-
-    // const openRegistro = document.querySelector('.a-logueo');
-    // const usuLogueo = document.querySelector('.usuario-logueo');
-    // const usuRegistro = document.querySelector('.usuario-registro');
-    // const closeLogueo = document.querySelector('.botton__ocultar');
-    // openRegistro.addEventListener('click', (e) => {
-    //     //e.preventDefault();
-    //     usuLogueo.classList.add('hide-usuario-form-1');
-    // });
-    // closeLogueo.addEventListener('click', (e) => {
-    //     //e.preventDefault();
-    //     usuLogueo.classList.remove('hide-usuario-form-1');
-    // });
 </script>
 
 </html>
