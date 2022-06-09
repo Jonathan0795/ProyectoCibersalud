@@ -9,113 +9,119 @@
     <link rel="icon" href="icon/c.ico">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/stylePaciente.css" rel="stylesheet">
-    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/sweetalert2.all.min.js"></script>
 </head>
 
-<body class="body">
-    <header class="header">
-        <div class="hearder__titulo">
-            <a class="titulo__a" href="inicio.html">Cibersalud</a>
-        </div>
-        <div class="header__lista">
-            <ul class="lista">
-
-                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
-                        ${pl.paterno } ${pl.materno }</a></li>
-                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
-                    <ul class="lista__show">
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.jsp">Perfil</a>
-                        </li>
-                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <main class="main">
-        <form action="paciserv" method="get" title="Busqueda Paciente" id="busquedaPaciente">
-            <div class="contendorPaci">
-                <div id="alertDni" class="alert alert-danger alert-dismissible fade show" role="alert"
-                    style="display: none">
-                    <!--  <input type="hidden" name="hdMensaje" id="hdMensaje"
+<body>
+    <div class="contenedor__paciente">
+        <header class="header">
+            <div class="hearder__titulo">
+                <a class="titulo__a" th:href="@{/menu/principal}">Cibersalud</a>
+            </div>
+            <div class="header__lista">
+                <ul class="lista">
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#"></a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                        <ul class="lista__show">
+                            <li class="lista__item lista__item-barra"><a class="item__link" href="#">Perfil</a>
+                            </li>
+                            <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="contenedor-consulta">
+            <form th:action="#{}" method="post" title="Busqueda Paciente" id="busquedaPaciente" class="form__busqueda">
+                <div class="contendorPaci">
+                    <div id="alertDni" class="alert alert-danger alert-dismissible fade show" role="alert"
+                        style="display: none">
+                        <!--  <input type="hidden" name="hdMensaje" id="hdMensaje"
 					value="${mensaje}"></input>-->
-                    <strong>Ingresa un numero de documento
-                    </strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="consulta">
-                    <div class="consulta__titulos">
-                        <h4>Busqueda del Paciente</h4>
+                        <strong>Ingresa un numero de documento
+                        </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="consultaD">
-                        <div class="form-row">
-                            <div class="form-group col-md-2">
-                                <button type="button" class="btn btn-secondary ">Documento</button>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input type="text" value="${dni }" name="txtDoc" class="form-control" id="InputDoc"
-                                    placeholder="Ingrese el N° Documento del Paciente">
-                                <div id="errorDni" class="invalid-feedback">El número de documento debe tener 8 digitos.
+                    <div class="consulta">
+                        <div class="consulta__titulos">
+                            <h4>Busqueda del Paciente</h4>
+                        </div>
+                        <div class="consultaD">
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <button type="button" class="btn btn-secondary ">Documento</button>
                                 </div>
-                            </div>
-                            <div class="form-group col-md-2">
-                                <a class="btn btn-info" name="opcion2" id="btnBuscarE"> <i class="fas fa-search"></i>
-                                    Buscar
-                                </a>
-                                <button type="submit" name="opcion" class="btn btn-info" value="ld"
-                                    style="display: none" id="btnBuscar">
-                                    <i class="fas fa-search"></i> Buscar
-                                </button>
-                            </div>
-                            <div class="form-group col-md-2">
-                                <a href="pacienteRegistro.html" class="btn btn-danger" id="btnNuevo" role="button"
-                                    aria-pressed="true"><i class="fas fa-hospital-user"></i> Nuevo</a>
+                                <div class="form-group col-md-6">
+                                    <input type="text" value="${dni }" name="txtDoc" class="form-control" id="InputDoc"
+                                        placeholder="Ingrese el N° Documento del Paciente">
+                                    <div id="errorDni" class="invalid-feedback">El número de documento debe tener 8
+                                        digitos.
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <a class="btn btn-info" name="opcion2" id="btnBuscarE"> <i
+                                            class="fas fa-search"></i>
+                                        Buscar
+                                    </a>
+                                    <button type="submit" name="opcion" class="btn btn-info" value="ld"
+                                        style="display: none" id="btnBuscar">
+                                        <i class="fas fa-search"></i> Buscar
+                                    </button>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <a href="pacienteRegistro.html" class="btn btn-danger" id="btnNuevo" role="button"
+                                        aria-pressed="true"><i class="fas fa-hospital-user"></i> Nuevo</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tablaPaciente">
-                    <table id="myTable" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Documento</th>
-                                <th>Apellidos y Nombres</th>
-                                <th>Fecha Nacimiento</th>
-                                <th>Sexo</th>
-                                <th>Historia Clinica</th>
-                                <th class="table__accion">Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${lisPaci }" var="a">
-                                <tr class="lisPaci">
-                                    <td>${a.getDni()}</td>
-                                    <td>${a.getApeNom()}</td>
-                                    <td>${a.getFecnac()}</td>
-                                    <td>${a.getTipoSexo() }</td>
-                                    <td>${a.getNroHis() }</td>
-                                    <td class="lisPaci__accion"><button type="submit" name="opcion"
-                                            class="btn btn-success" value="b" title="Actualizar">Actualizar
-                                            Registro</button>
-                                        <button type="submit" name="opcion" class="btn btn-dark" value="gc">Registrar
-                                            Cita</button>
-                                    </td>
+                    <div class="tablaPaciente">
+                        <table id="myTable" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Documento</th>
+                                    <th>Apellidos y Nombres</th>
+                                    <th>Fecha Nacimiento</th>
+                                    <th>Sexo</th>
+                                    <th>Historia Clinica</th>
+                                    <th class="table__accion">Acción</th>
                                 </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${lisPaci }" var="a">
+                                    <tr class="lisPaci">
+                                        <td>${a.getDni()}</td>
+                                        <td>${a.getApeNom()}</td>
+                                        <td>${a.getFecnac()}</td>
+                                        <td>${a.getTipoSexo() }</td>
+                                        <td>${a.getNroHis() }</td>
+                                        <td class="lisPaci__accion"><button type="submit" name="opcion"
+                                                class="btn btn-success" value="b" title="Actualizar">Actualizar
+                                                Registro</button>
+                                            <button type="submit" name="opcion" class="btn btn-dark"
+                                                value="gc">Registrar
+                                                Cita</button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="hidden" name="hdMensaje" id="hdMensaje" value="${mensaje}"></input>
                 </div>
-                <input type="hidden" name="hdMensaje" id="hdMensaje" value="${mensaje}"></input>
-            </div>
-        </form>
-    </main>
+            </form>
+        </main>
+    </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="patient.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function () {
         const Men = $("#hdMensaje").val();
@@ -140,14 +146,5 @@
         });
     }); 	
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </html>

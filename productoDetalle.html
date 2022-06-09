@@ -255,6 +255,7 @@
         </header>
         <main class="main">
             <div class="contenedor__detalle-Pro">
+                <form action="">
                 <div class="detalle-Pro-section">
                     <div class="detalle-img-Pro"><img src="img/prervativosDurex.jpg" alt="" class="img_det-Pro"></div>
                     <div class="detalle-desc-Pro">
@@ -269,9 +270,10 @@
                         </div>
                         <div class="cantidad-des-Pro">
                             <label class="cant-lbl-des">Cantidad</label>
-                            <div class="container__cantidad-modal"><a href="#" class="restar-modal"
-                                    title="Dismiunir la cantidad">-</a><input type="text" class="cantidad__input-modal"
-                                    value="1"><a href="#" class="sumar-modal" title="Aumentar la cantidad">+</a></div>
+                            <div class="container__cantidad-modal"><button class="restar-modal"
+                                    title="Dismiunir la cantidad">-</button><input type="text"
+                                    class="cantidad__input-modal" value="1"><button class="sumar-modal"
+                                    title="Aumentar la cantidad">+</button></div>
                         </div>
                         <div class="button-des-Pro">
                             <a href="#" class="btn-des-Pro">Agregar al carrito</a>
@@ -289,6 +291,7 @@
                         </div>
                     </div>
                 </div>
+            </form>
             </div>
             <div class="container__cate-Pro">
                 <h1 class="titulo-cate-Pro">Categorías que podrían interesarte</h1>
@@ -394,5 +397,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </body>
-
+<script type="text/javascript">
+    var valor=0;
+    function carrito(boton){
+        var contador = document.getElementById("contador").value;
+        if (boton.value=='aumentar') {
+            valor++
+        }else{
+            valor--
+        }
+        document.getElementById("contador").textContent = valor;
+    }
+    
+    </script>
 </html>

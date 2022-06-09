@@ -11,27 +11,27 @@
     <link href="css/stylePaciente.css" rel="stylesheet">
 </head>
 
-<body class="body">
-    <header class="header">
-        <div class="hearder__titulo">
-            <a class="titulo__a" href="inicio.html">Cibersalud</a>
-        </div>
-        <div class="header__lista">
-            <ul class="lista">
-                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
-                        ${pl.paterno } ${pl.materno }</a></li>
-                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
-                    <ul class="lista__show">
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html">Perfil</a>
-                        </li>
-                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <main class="main">
-        <div class="contenedor">
+<body>
+    <div class="contenedor__paciente">
+        <header class="header">
+            <div class="hearder__titulo">
+                <a class="titulo__a" href="inicio.html">Cibersalud</a>
+            </div>
+            <div class="header__lista">
+                <ul class="lista">
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#"></a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                        <ul class="lista__show">
+                            <li class="lista__item lista__item-barra"><a class="item__link"
+                                    href="profile.html">Perfil</a>
+                            </li>
+                            <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="contenedor-registro">
             <form action="paciserv" method="get" title="Acceso al sistema" class="needs-validation form__contenedor"
                 novalidate>
                 <div class="contenedor__titulo">
@@ -41,168 +41,94 @@
                     <div class="contenedor-h4">
                         <h4>Datos Personales</h4>
                     </div>
+
                     <div class="contenedor__datosP-datosPer">
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
+                        <div class="form-row-imagen">
+                            <div class="contenedor-img-sexo">
                                 <div class="contenedor__datosP-datosPer-img">
                                     <img id="caja1" alt="" src="img/pacienteH.png" class="center">
                                 </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <b><label for="exampleInputEmail1">Número de
-                                        documento:</label></b> <input type="text" value="${pa.dni }" name="txtDni"
-                                    class="form-control" id="InputDni" onkeyup="PasarValor();" pattern="[0-9]{8}"
-                                    required>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Solo ingesar Números.</div>
+                            <div class="form-row-div-img">
+                                <div class="form-row">
+                                    <input type="hidden" required class="input-perfil">
+                                </div>
+                                <div class="form-row">
+                                    <select type="text" required class="input-perfil" value="">
+                                        <option value=""></option>
+                                        <option value="1">Dni</option>
+                                    </select>
+                                    <label alt="Label" data-placeholder="Tipo documento" class="lbl-perfil"></label>
+                                </div>
+                                <div class="form-row">
+                                    <input type="text" required class="input-perfil" value="76358559" id="InputDni">
+                                    <label alt="Label" data-placeholder="N° de documento" class="lbl-perfil"></label>
+                                </div>
+
                             </div>
-                            <div class="form-group col-md-1"></div>
-                            <div class="form-group col-md-3">
-                                <b><label for="exampleInputEmail1">Historia Clinica:</label></b>
-                                <input type="text" value="${pa.historia}" class="form-control none" name="txtHc"
-                                    id="InputHc" readonly="readonly">
+
+                        </div>
+                        <div class="form-row-div">
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Apellido Paterno" class="lbl-perfil"></label>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Apellido Materno" class="lbl-perfil"></label>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Nombre" class="lbl-perfil"></label>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Apellido Paterno:</label></b>
-                                <input type="text" value="${pa.apeP }" class="form-control" name="txtApePa"
-                                    id="InputApePa" pattern="[A-Za-zñÑáéíóú]+( [A-Za-zñÑáéíóú]+)*" required>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Solo ingesar Letras.</div>
+                        <div class="form-row-div">
+                            <div class="form-row">
+                                <input type="date" required class="input-perfil" value="76358559">
+                                <label alt="Label" data-placeholder="Fecha Nacimiento" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Apellido Materno:</label></b>
-                                <input type="text" value="${pa.apeM }" class="form-control" name="txtApeMat"
-                                    id="InputApeMat" pattern="[A-Za-zñÑáéíóú]+( [A-Za-zñÑáéíóú]+)*" required>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Solo ingesar Letras.</div>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" id="cboSexo">
+                                    <option value=""></option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                                <label alt="Label" data-placeholder="Sexo" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Nombres:</label></b> <input type="text"
-                                    value="${pa.nomP }" name="txtNombre" class="form-control" id="InputNombre"
-                                    pattern="[A-Za-zñÑáéíóú]+( [A-Za-zñÑáéíóú]+)*" required>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Solo ingesar Letras.</div>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="S">Soltero(a)</option>
+                                    <option value="C">Casado(a)</option>
+                                    <option value="V">Viudo(a)</option>
+                                    <option value="D">Divorciado(a)</option>
+                                </select>
+                                <label alt="Label" data-placeholder="Estado Civil" class="lbl-perfil"></label>
                             </div>
                         </div>
-                        <div class="form-row"></div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Fecha Nacimiento:</label></b>
-                                <input type="date" value="${pa.Fecnac }" name="txtFecha" class="form-control"
-                                    id="InputFecha" required>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Ingrese una fecha.</div>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Sexo :</label></b> <select name="cboSexo"
-                                    class="form-control" id="cboSexo" required>
-                                    <option value="">--Seleccione--</option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Femenino</option>
-                                    <!--  	
-									DAOFactory fabrica4 = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
-									ArrayList<CBOSexo> lista3 = fabrica4.getPorfesioDAO().listadoSexo();
-									request.setAttribute("lstSexo", lista3);									
-									<c:forEach items="${lstSexo }" var="c">
-										<c:if test="${c.sexo == pa.sexo}">
-											<option value="${c.sexo }" selected="selected">${c.tipoSexo}</option>
-										</c:if>
-										<c:if test="${c.sexo != pa.sexo}">
-											<option value="${c.sexo }">${c.tipoSexo }</option>
-										</c:if>
-									</c:forEach>-->
+                        <!-- <div class="form-row-div">
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Sexo.</div>
+                                <label alt="Label" data-placeholder="Grado de instrucción" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Estado Civil :</label></b> <select required
-                                    name="cboCivil" class="form-control" id="cboCivil">
-                                    <option value="">--Seleccione--</option>
-                                    <% DAOFactory fabrica1=DAOFactory.getDAOFactory(DAOFactory.MYSQL);
-                                        ArrayList<CBOCivil> lista = fabrica1.getPacienteDAO().listadoCivil();
-                                        request.setAttribute("lstCivil", lista);
-                                        %>
-                                        <c:forEach items="${lstCivil }" var="c">
-                                            <c:if test="${c.idCivil == pa.idCivil}">
-                                                <option value="${c.idCivil }" selected="selected">${c.desCivil}</option>
-                                            </c:if>
-                                            <c:if test="${c.idCivil != pa.idCivil}">
-                                                <option value="${c.idCivil }">${c.desCivil }</option>
-                                            </c:if>
-                                        </c:forEach>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                    z                <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Estado Civil.</div>
+                                <label alt="Label" data-placeholder="Ocupación" class="lbl-perfil"></label>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Grado de
-                                        instrucción :</label> </b><select required name="cboGra" class="form-control"
-                                    id="cboGra">
-                                    <option value="">--Seleccione--</option>
-                                    <% DAOFactory fabric=DAOFactory.getDAOFactory(DAOFactory.MYSQL); ArrayList<CBOGrado>
-                                        listaG = fabric.getPacienteDAO().listadoGrado();
-                                        request.setAttribute("lstGra", listaG);
-                                        %>
-                                        <c:forEach items="${lstGra }" var="c">
-                                            <c:if test="${c.idGrad == pa.idGrad}">
-                                                <option value="${c.idGrad }" selected="selected">${c.tipoGrado}</option>
-                                            </c:if>
-                                            <c:if test="${c.idGrad != pa.idGrad}">
-                                                <option value="${c.idGrad }">${c.tipoGrado }</option>
-                                            </c:if>
-                                        </c:forEach>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Grado de
-                                    Instruccion.</div>
+                                <label alt="Label" data-placeholder="Tipo de Sangre" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Ocupación:</label></b> <select required
-                                    name="cboOcup" class="form-control" id="cboOcup">
-                                    <option value="">--Seleccione--</option>
-                                    <% DAOFactory fabri=DAOFactory.getDAOFactory(DAOFactory.MYSQL); ArrayList<CBOOcup>
-                                        listaC = fabri.getPacienteDAO().listadoOcupa();
-                                        request.setAttribute("lstOcu", listaC);
-                                        %>
-                                        <c:forEach items="${lstOcu }" var="c">
-                                            <c:if test="${c.idOcu == pa.idOcu}">
-                                                <option value="${c.idOcu }" selected="selected">${c.desOcu}</option>
-                                            </c:if>
-                                            <c:if test="${c.idOcu != pa.idOcu}">
-                                                <option value="${c.idOcu }">${c.desOcu }</option>
-                                            </c:if>
-                                        </c:forEach>
-                                </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona una Ocupación.</div>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Tipo de Sangre:</label></b> <select name="cboSangre"
-                                    required class="form-control" id="cboSangre">
-                                    <option value="">--Seleccione--</option>
-                                    <% DAOFactory fabricaS=DAOFactory.getDAOFactory(DAOFactory.MYSQL);
-                                        ArrayList<CBOSangre> listaS = fabricaS.getPacienteDAO().listadoSangre();
-                                        request.setAttribute("lstSan", listaS);
-                                        %>
-                                        <c:forEach items="${lstSan }" var="c">
-                                            <c:if test="${c.idSan == pa.idSan}">
-                                                <option value="${c.idSan }" selected="selected">${c.desSangre}</option>
-                                            </c:if>
-                                            <c:if test="${c.idSan != pa.idSan}">
-                                                <option value="${c.idSan }">${c.desSangre }</option>
-                                            </c:if>
-                                        </c:forEach>
-                                </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Tipo de
-                                    Sangre.</div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="contenedor__separator"></div>
@@ -211,68 +137,38 @@
                         <h4>Datos de Domicilio Actual</h4>
                     </div>
                     <div class="contenedor__datoDomi-direccion">
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Departamento:</label></b> <select
-                                    name="selectDepartamento" onchange="cambia()" class="form-control" required>
-                                    <option value="">Seleccione</option>
-                                    <option value="Amazonas">Amazonas</option>
-                                    <option value="Ancash">Ancash</option>
-                                    <option value="Apurímac">Apurímac</option>
-                                    <option value="Arequipa">Arequipa</option>
-                                    <option value="Ayacucho">Ayacucho</option>
-                                    <option value="Cajamarca">Cajamarca</option>
-                                    <option value="Callao">Callao</option>
-                                    <option value="Cuzco">Cuzco</option>
-                                    <option value="Huancavelica">Huancavelica</option>
-                                    <option value="Huánuco">Huánuco</option>
-                                    <option value="Ica">Ica</option>
-                                    <option value="Junín">Junín</option>
-                                    <option value="La_Libertad">La Libertad</option>
-                                    <option value="Lambayeque">Lambayeque</option>
-                                    <option value="Lima">Lima</option>
-                                    <option value="Loreto">Loreto</option>
-                                    <option value="Madre_de_Dios">Madre de Dios</option>
-                                    <option value="Moquegua">Moquegua</option>
-                                    <option value="Pasco">Pasco</option>
-                                    <option value="Piura">Piura</option>
-                                    <option value="Puno">Puno</option>
-                                    <option value="San_Martín">San Martín</option>
-                                    <option value="Tacna">Tacna</option>
-                                    <option value="Tumbes">Tumbes</option>
-                                    <option value="Ucayali">Ucayali</option>
+                        <div class="form-row-div">
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Departamento.</div>
+                                <label alt="Label" data-placeholder="Departamento" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Provincia:</label></b> <select class="form-control"
-                                    name="selectProvincia" onchange="cambiaDistrito()" required="">
-                                    <option value="">Seleccione la Provincia</option>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona una Provincia.</div>
+                                <label alt="Label" data-placeholder="Provincia" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="exampleInputEmail1">Distrito: </label></b> <select class="form-control"
-                                    name="selectDistrito" required="">
-                                    <option value="">Seleccione el Distrito</option>
+                            <div class="form-row">
+                                <select type="text" required class="input-perfil" value="">
+                                    <option value=""></option>
+                                    <option value="1">Lima</option>
                                 </select>
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Selecciona un Distrito.</div>
+                                <label alt="Label" data-placeholder="Distrito" class="lbl-perfil"></label>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <b><label for="N° de Contacto">Dirección Actual:</label></b> <input type="text"
-                                    value="${pa.DirecPaciente }" name="txtDirecci" class="form-control"
-                                    id="InputDirecci">
+                        <div class="div-direccion">
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Dirección Actual" class="lbl-perfil"></label>
                             </div>
-
-                            <div class="form-group col-md-6">
-                                <b><label for="N° de Contacto">Referencia
-                                        Domiciliaria :</label></b> <input type="text" value="${pa.refeDomi }"
-                                    name="txtRefeDo" class="form-control" id="InputRefeDo">
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Referencia Domiciliaria"
+                                    class="lbl-perfil"></label>
                             </div>
                         </div>
                     </div>
@@ -283,27 +179,18 @@
                         <h4>Datos de contacto</h4>
                     </div>
                     <div class="contenedor__datosCont-contac">
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <b><label for="N° de Contacto">N° Celular:</label></b> <input type="text"
-                                    value="${pa.celular }" name="txtCel" pattern="[0-9]{9}" class="form-control"
-                                    id="InputCelu">
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Celular no valido.</div>
+                        <div class="form-row-div">
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="N° Celular" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="N° de Contacto">N° Teléfono :</label></b> <input type="text"
-                                    value="${pa.telef }" name="txtTelf" pattern="[0-9]{7}" class="form-control"
-                                    id="InputTelf">
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Teléfono no valido.</div>
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="N° Teléfono" class="lbl-perfil"></label>
                             </div>
-                            <div class="form-group col-md-4">
-                                <b><label for="N° de Contacto">Correo electrónico :</label></b>
-                                <input type="email" value="${pa.correo }" name="txtCorreo" class="form-control"
-                                    id="InputCorreo">
-                                <div class="valid-feedback"></div>
-                                <div class="invalid-feedback">Correo no valido.</div>
+                            <div class="form-row">
+                                <input type="text" required class="input-perfil">
+                                <label alt="Label" data-placeholder="Correo electrónico" class="lbl-perfil"></label>
                             </div>
                         </div>
                     </div>
@@ -315,16 +202,9 @@
                             aria-pressed="true">Cancelar</a>
                     </div>
                 </div>
-                <div class="alert alert-warning alert-dismissible fade show" style="display: none;" role="alert">
-                    <strong>REGISTRO EXITOSO</strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                ${mensaje }
             </form>
         </div>
-    </main>
+    </div>
 </body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
@@ -340,10 +220,10 @@
         $("#cboSexo").change(function () {
             let num = $(this).val();
 
-            if (num == 1) {
+            if (num == 'M') {
                 valor = 'pacienteH.png';
             }
-            if (num == 2) {
+            if (num == 'F') {
                 valor = 'pacienteF.png';
             }
 

@@ -10,111 +10,113 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/styleMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </head>
 
-<body class="body">
-    <header class="header">
-        <div class="hearder__titulo">
-            <a class="titulo__a" href="index.html">Cibersalud</a>
-        </div>
-        <div class="header__lista">
-            <ul class="lista">
-                <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
-                        ${pl.paterno } ${pl.materno }</a></li>
-                <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
-                    <ul class="lista__show">
-                        <li class="lista__item lista__item-barra"><a class="item__link" href="profile.html">Perfil</a>
-                        </li>
-                        <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <main class="main">
-        <nav class="nav">
-            <ul class="list">
-                <li class="list__item list__item--click">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-hospital-alt"></i> <a href="#" class="nav__link">Servicios</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show">
-                        <li class="list__inside"><a href="registro_profesio.jsp"
-                                class="nav__link nav__link--inside">Estoy dentro </a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a></li>
-                        <li class="list__inside"><a href="laboratorioRegistro.html" class="nav__link nav__link--inside">Laboratorio </a></li>
-                        <li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-first-aid"></i> <a href="#" class="nav__link">Farmacia</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="reg_paciente.jsp"
-                                class="nav__link nav__link--inside">Catálogo Medicamentos</a></li>                     
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Consulta</a></li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-user-injured"></i> <a href="#" class="nav__link">Paciente</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="pacienteRegistro.jsp"
-                                class="nav__link nav__link--inside">Registro Pacientes</a></li>
-                        <li class="list__inside"><a href="pacienteConsulta.jsp"
-                                class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
-
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button list__button--click">
-                        <i class="fas fa-hospital-user"></i> <a href="#" class="nav__link">Citas</a>
-                        <i class="fas fa-arrow-right list__arrow"></i>
-                    </div>
-                    <ul class="list__show list__item--click">
-                        <li class="list__inside"><a href="citaLogin.jsp" class="nav__link nav__link--inside">Registro
-                                Citas</a></li>
-                        <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a></li>
-                        <li class="list__inside"><a href="citserv?opcion=lb" class="nav__link nav__link--inside">Bandeja
-                                de entrada</a></li>
-                    </ul>
-                </li>
-                <li class="list__item">
-                    <div class="list__button">
-                        <i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="das">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">${ds.result }</p>
-                    <a href="#" class="card-link">Card link</a> <a href="#" class="card-link">Another link</a>
-
-                </div>
+<body>
+    <div class="container__main">
+        <header class="header">
+            <div class="hearder__titulo">
+                <a class="titulo__a" href="index.html">Cibersalud</a>
             </div>
-        </div>
-    </main>
+            <div class="header__lista">
+                <ul class="lista">
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#"></a></li>
+                    <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
+                        <ul class="lista__show">
+                            <li class="lista__item lista__item-barra"><a class="item__link"
+                                    href="profile.html">Perfil</a>
+                            </li>
+                            <li class="lista__item"><a class="item__link" href="servPro?opcion=c">Cerrar Sesion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="main__manenimiento">
+            <nav class="nav__menu">
+				<ul class="list">
+					<li class="list__item list__item--click">
+						<div class="list__button list__button--click">
+							<i class="fas fa-hospital-alt"></i> <a href="#" class="nav__link">Servicios</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show">
+							<li class="list__inside"><a href="registro_profesio.jsp"
+									class="nav__link nav__link--inside">Estoy dentro </a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
+							</li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
+							</li>
+							<li class="list__inside"><a href="laboratorioRegistro.html"
+									class="nav__link nav__link--inside">Laboratorio </a></li>
+							<li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
+							</li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-first-aid"></i> <a href="#" class="nav__link">Farmacia</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="reg_paciente.jsp"
+									class="nav__link nav__link--inside">Catálogo
+									Medicamentos</a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Consulta</a></li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-user-injured"></i> <a href="#" class="nav__link">Paciente</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="pacienteRegistro.jsp"
+									class="nav__link nav__link--inside">Registro Pacientes</a></li>
+							<li class="list__inside"><a href="pacienteConsulta.jsp"
+									class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
+
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-hospital-user"></i> <a href="#" class="nav__link">Citas</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="citaLogin.jsp"
+									class="nav__link nav__link--inside">Registro
+									Citas</a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a>
+							</li>
+							<li class="list__inside"><a href="citserv?opcion=lb"
+									class="nav__link nav__link--inside">Bandeja
+									de entrada</a></li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button">
+							<i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+            <div class="contenedor__Man-medicamentos">
+
+            </div>
+        </main>
+        <footer class="footer-Prod">
+            <div class="footer__Prod">
+                <p>Copyright&copy Cibersalud 2022 Todos los derechos reservados</p>
+            </div>
+        </footer>
+    </div>
 </body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
 
 </html>

@@ -11,12 +11,10 @@
     <link href="css/styleMenu.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css" />
-    <link href="https:https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body class="body">
+<body>
     <div class="container__main">
         <header class="header">
             <div class="hearder__titulo">
@@ -24,8 +22,7 @@
             </div>
             <div class="header__lista">
                 <ul class="lista">
-                    <li class="lista__item"><a class="item__link item__link-usuario" href="#">${pl.nombreP }
-                            ${pl.paterno } ${pl.materno }</a></li>
+                    <li class="lista__item"><a class="item__link item__link-usuario" href="#"></a></li>
                     <li class="lista__item"><a class="item__link" href="#"><i class="fas fa-user-md"></i></a>
                         <ul class="lista__show">
                             <li class="lista__item lista__item-barra"><a class="item__link"
@@ -37,75 +34,75 @@
                 </ul>
             </div>
         </header>
-        <main class="main__mant-prod">
-            <nav class="nav">
-                <ul class="list">
-                    <li class="list__item list__item--click">
-                        <div class="list__button list__button--click">
-                            <i class="fas fa-hospital-alt"></i> <a href="#" class="nav__link">Servicios</a>
-                            <i class="fas fa-arrow-right list__arrow"></i>
-                        </div>
-                        <ul class="list__show">
-                            <li class="list__inside"><a href="registro_profesio.jsp"
-                                    class="nav__link nav__link--inside">Estoy dentro </a></li>
-                            <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
-                            </li>
-                            <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
-                            </li>
-                            <li class="list__inside"><a href="laboratorioRegistro.html"
-                                    class="nav__link nav__link--inside">Laboratorio </a></li>
-                            <li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__button list__button--click">
-                            <i class="fas fa-first-aid"></i> <a href="#" class="nav__link">Farmacia</a>
-                            <i class="fas fa-arrow-right list__arrow"></i>
-                        </div>
-                        <ul class="list__show list__item--click">
-                            <li class="list__inside"><a href="reg_paciente.jsp"
-                                    class="nav__link nav__link--inside">Catálogo
-                                    Medicamentos</a></li>
-                            <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Consulta</a></li>
-                        </ul>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__button list__button--click">
-                            <i class="fas fa-user-injured"></i> <a href="#" class="nav__link">Paciente</a>
-                            <i class="fas fa-arrow-right list__arrow"></i>
-                        </div>
-                        <ul class="list__show list__item--click">
-                            <li class="list__inside"><a href="pacienteRegistro.jsp"
-                                    class="nav__link nav__link--inside">Registro Pacientes</a></li>
-                            <li class="list__inside"><a href="pacienteConsulta.jsp"
-                                    class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
+        <main class="main__manenimiento">
+            <nav class="nav__menu">
+				<ul class="list">
+					<li class="list__item list__item--click">
+						<div class="list__button list__button--click">
+							<i class="fas fa-hospital-alt"></i> <a href="#" class="nav__link">Servicios</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show">
+							<li class="list__inside"><a href="registro_profesio.jsp"
+									class="nav__link nav__link--inside">Estoy dentro </a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
+							</li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Estoy dentro</a>
+							</li>
+							<li class="list__inside"><a href="laboratorioRegistro.html"
+									class="nav__link nav__link--inside">Laboratorio </a></li>
+							<li class="list__inside"><a href="topico.jsp" class="nav__link nav__link--inside">Topico</a>
+							</li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-first-aid"></i> <a href="#" class="nav__link">Farmacia</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="reg_paciente.jsp"
+									class="nav__link nav__link--inside">Catálogo
+									Medicamentos</a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Consulta</a></li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-user-injured"></i> <a href="#" class="nav__link">Paciente</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="pacienteRegistro.jsp"
+									class="nav__link nav__link--inside">Registro Pacientes</a></li>
+							<li class="list__inside"><a href="pacienteConsulta.jsp"
+									class="nav__link nav__link--inside">Busqueda Pacientes</a></li>
 
-                        </ul>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__button list__button--click">
-                            <i class="fas fa-hospital-user"></i> <a href="#" class="nav__link">Citas</a>
-                            <i class="fas fa-arrow-right list__arrow"></i>
-                        </div>
-                        <ul class="list__show list__item--click">
-                            <li class="list__inside"><a href="citaLogin.jsp"
-                                    class="nav__link nav__link--inside">Registro
-                                    Citas</a></li>
-                            <li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a>
-                            </li>
-                            <li class="list__inside"><a href="citserv?opcion=lb"
-                                    class="nav__link nav__link--inside">Bandeja
-                                    de entrada</a></li>
-                        </ul>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__button">
-                            <i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button list__button--click">
+							<i class="fas fa-hospital-user"></i> <a href="#" class="nav__link">Citas</a>
+							<i class="fas fa-arrow-right list__arrow"></i>
+						</div>
+						<ul class="list__show list__item--click">
+							<li class="list__inside"><a href="citaLogin.jsp"
+									class="nav__link nav__link--inside">Registro
+									Citas</a></li>
+							<li class="list__inside"><a href="#" class="nav__link nav__link--inside">Busqueda Citas</a>
+							</li>
+							<li class="list__inside"><a href="citserv?opcion=lb"
+									class="nav__link nav__link--inside">Bandeja
+									de entrada</a></li>
+						</ul>
+					</li>
+					<li class="list__item">
+						<div class="list__button">
+							<i class="fas fa-cart-plus"></i> <a href="venServ?opcion=l" class="nav__link">Venta</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
             <div class="contenedor__Man-medicamentos">
                 <div class="mantenimiento-medicamentos">
                     <div class="medicamentos-header">
@@ -126,16 +123,18 @@
                             </thead>
                             <tbody>
                                 <tr th:each="p: ${list}">
-                                    <td th:text="${p.idproducto}"></td>
-                                    <td th:text="${p.nombre}" id="td_nombre"></td>
-                                    <td th:text="${p.categorias.desccategoria}"></td>
-                                    <td th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}">
+                                    <td th:text="${p.idproducto}">1</td>
+                                    <td th:text="${p.nombre}" id="td_nombre">Gaseovet 80 mg/ml Suspensión Gotas Sabor
+                                        Fresa</td>
+                                    <td th:text="${p.categorias.desccategoria}">Malestar Estomacal</td>
+                                    <td th:text="@{'S/ ' +*{#numbers.formatDecimal(p.precioproducto,0,2,'POINT')}}">S/
+                                        18.70
                                     </td>
-                                    <td th:text="${p.tipopresentacion}"></td>
-                                    <td id="td__botones"> <button type="button" class="btn btn-primary"><i
-                                                class="fa-solid fa-book-medical"></i></button>
-                                        <button type="button" class="btn btn-secondary"><i
-                                                class="fa-solid fa-ban"></i></button>
+                                    <td th:text="${p.tipopresentacion}" id="td__presentacion"></td>
+                                    <td id="td__botones"> <a href="#" class="button__editar" title="Editar"><i
+                                                class="fa-solid fa-pen-to-square"></i></i></a>
+                                        <a href="#" class="button__delete" title="Eliminar"><i
+                                                class="fa-solid fa-ban"></i></a>
                                     </td>
                                 </tr>
                             </tbody>

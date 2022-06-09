@@ -18,7 +18,7 @@
     <div class="container__prueba">
         <header class="header" id="myHeader">
             <div class="nav__header-Pay">
-                <div class="hearder__titulo">
+                <div class="hearder__titulo header__titulo-loguin">
                     <a class="titulo__a" href="productos.html">Cibersalud</a>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="usuario-form-2">
                     <form action="" class="formulario-usuario">
                         <div class="usuario-registro">
-                            <lable class="lbl-titulo-R">¿No estás registrado?</lable>
+                            <label class="lbl-titulo-R">¿No estás registrado?</label>
                             <label for="" class="lbl-logo-R">Completa el siguiente formulario</label>
                             <div class="form-row form-colum-R">
                                 <div class="form-group col-md-6">
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <b><label>Apellido Materno</label></b>
-                                    <input type="text" class="form-contrzol" id="form-control">
+                                    <input type="text" class="form-control" id="form-control">
                                 </div>
                             </div>
                             <div class="form-row form-colum-R">
@@ -106,6 +106,8 @@
                             <!-- <a href="#" class="button-loguin">Registrarme</a> -->
                         </div>
                     </form>
+                    <div class="alert alert-danger" role="alert" th:text="${mensaje}" th:if="${mensaje}!=null">
+					</div>              
                 </div>
             </div>
         </main>
